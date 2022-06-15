@@ -17,6 +17,6 @@
 	
 	<h1>MAIN PAGE</h1>
 	
-	first
+	<a href="${contextPath}/reservation/reservationPage">예약 페이지</a>
 </body>
 </html>

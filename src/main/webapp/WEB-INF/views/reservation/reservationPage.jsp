@@ -14,5 +14,7 @@
 </head>
 <body>
 
+	<h1>예약 페이지</h1>
+
 </body>
 </html>
