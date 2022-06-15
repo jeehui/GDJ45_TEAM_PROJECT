@@ -9,8 +9,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<setting name="mapUnderscoreToCamelCase" value="true"/>
 	</settings>
 	
-	<typeAliases>
+	<!-- <typeAliases>
 		<typeAlias type="com.tp.yogioteur.domain.DTO" alias="DTO" />
-	</typeAliases>
+	</typeAliases> -->
 	
 </configuration>
