@@ -13,8 +13,7 @@ import lombok.NoArgsConstructor;
 @Builder
 
 public class ReviewDTO {
-	// 업데이트 테스용
-	//ㅁㅇㄹㄴㄴㄴ
+	
 	private Long reviewNo;
 	private Long memberNo;
 	private String reviewTitle;
