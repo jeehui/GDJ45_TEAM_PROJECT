@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class ImageDTO {
+	//dhghfhdhfdhfdh
 	private Long imageNo;
 	private Integer roomNo;
 	private String imagePath;
