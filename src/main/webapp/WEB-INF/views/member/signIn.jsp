@@ -9,16 +9,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script>
-</script>
 </head>
 <body>
-	
-	<jsp:include page="./layout/header.jsp"></jsp:include>
-	
-	<h1>MAIN PAGE</h1>
-	
 
-	
+	<jsp:include page="../layout/header.jsp"></jsp:include>
+<H1>회원가입</H1>
+
 </body>
 </html>
