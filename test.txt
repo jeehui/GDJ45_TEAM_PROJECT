@@ -1,3 +1,6 @@
 git test
 asd
+<<<<<<< HEAD
 awefaw
+=======
+아하하99999
