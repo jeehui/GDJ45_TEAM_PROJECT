@@ -13,4 +13,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="com.tp.yogioteur.domain.DTO" alias="DTO" />
 	</typeAliases> -->
 	
+	<typeAliases>
+		<typeAlias type="com.tp.yogioteur.domain.FaqDTO" alias="FaqDTO" />
+	</typeAliases>
+	
 </configuration>
