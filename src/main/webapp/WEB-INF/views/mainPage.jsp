@@ -10,8 +10,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="https://fonts.googleapis.com/css2?family=Charis+SIL:wght@700&family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 <script src="https://kit.fontawesome.com/148c1051b1.js" crossorigin="anonymous"></script>
 <script src="../resources/js/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
 <style type="text/css">
 	
@@ -83,6 +86,11 @@
 	
 </style>
 </head>
+<script>
+  $(function(){
+	$('#checkIn').datepicker('setDate', '+0');
+  });	
+</script>
 <body>
 	
 	<div class="head">
@@ -113,7 +121,8 @@
 		
 		<div class="searchBar">
 				CHECK IN/ OUT
-				<input type="date" id="checkin" >
+				<br>
+				<input type="text" id="checkIn">
 		</div>
 		
 		<div class="weather_api">
