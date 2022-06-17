@@ -9,12 +9,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Charis+SIL:wght@700&family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/148c1051b1.js" crossorigin="anonymous"></script>
 <script src="../resources/js/jquery-3.6.0.js"></script>
 
 <style type="text/css">
 	
 	body{
 		margin: 0;
+		font-family: 'Kdam Thmor Pro', sans-serif;
 	}
 	
 	a{
@@ -59,6 +62,23 @@
 		
 	}
 	
+	.searchBar{
+		width: 70%;
+		height: 70px;
+		display: block;
+		align-items: center;
+		background-color: silver;
+		padding-left: 130px;
+	    padding-right: 105px;
+	    margin-left: 143px;
+		
+	}
+	
+	.weather_api{
+		width: 100%;
+		height: 300px;
+		display: flex;
+	}
 	
 	
 </style>
@@ -84,15 +104,45 @@
 		
 		
 	</div>
+	
 	<div class="background">
 		<img src="resources/images/hotel.jpg" alt="main" width="100%" height="850px">
 	</div>
-		검색창
-	<div>
 	
+	<div class="center">
 		
-	
+		<div class="searchBar">
+				CHECK IN/ OUT
+				<input type="date" id="checkin" >
+		</div>
+		
+		<div class="weather_api">
+		
+			api
+		
+		</div>
 	</div>
-	
 </body>
+
+<footer>
+
+	<div class="end_info">
+	
+		<div class="hotel_info"> 
+		
+			<div class="info">
+				
+			</div> 
+			
+		</div>
+			<ul class="sns_info">
+				<li><i class="fa-brands fa-facebook-square"></i></li>
+				<li><i class="fa-brands fa-twitter-square"></i></li>
+				<li><i class="fa-brands fa-instagram"></i></li>
+			</ul>
+				
+		
+	</div>
+
+</footer>
 </html>
