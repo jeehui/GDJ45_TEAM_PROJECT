@@ -16,11 +16,11 @@ import com.tp.yogioteur.service.FaqService;
 public class FaqController {
 
 	@Autowired
-	private FaqService faqservice;
+	private FaqService faqService;
 	
 	@GetMapping("/faq/faqList")
 	public String faqList(HttpServletRequest request, Model model) {
-		faqservice.findFaqs(request, model);
+		faqService.findFaqs(request, model);
 		return "faq/faqList";
 	}
 	
@@ -31,7 +31,7 @@ public class FaqController {
 	
 	@PostMapping("/faq/faqSave")
 	public String faqSave(HttpServletRequest request, RedirectAttributes redirectAttributes) {
-		redirectAttributes.addFlashAttribute("insRes", faqservice.save(request));
+		redirectAttributes.addFlashAttribute("insRes", faqService.save(request));
 		redirectAttributes.addFlashAttribute("type", "insert");
 		return "redirect:/faq/faqResult";
 	}
@@ -42,8 +42,8 @@ public class FaqController {
 	}
 	
 	@GetMapping("/faq/remove")
-	public String remove(@RequestParam(value="boardNo", required=false, defaultValue = "0L") Long faqNo, RedirectAttributes redirectAttributes) {
-		redirectAttributes.addFlashAttribute("delRes", faqservice.remove(faqNo));
+	public String remove(@RequestParam(value="faqNo", required=false, defaultValue = "0L") Long faqNo, RedirectAttributes redirectAttributes) {
+		redirectAttributes.addFlashAttribute("delRes", faqService.remove(faqNo));
 		redirectAttributes.addFlashAttribute("type", "delete");
 		return "redirect:/faq/faqResult";
 	}

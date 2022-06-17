@@ -17,7 +17,7 @@
 	
 	<h1>MAIN PAGE</h1>
 	
-	
+	<a href="${contextPath}/faq/faqList">faq</a>
 	
 </body>
 </html>

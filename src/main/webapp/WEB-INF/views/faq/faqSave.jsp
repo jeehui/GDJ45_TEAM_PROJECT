@@ -14,9 +14,9 @@
 </head>
 <body>
 
-	<h1>FAQ 게시글 작성</h1>
+ 	<h1>FAQ 게시글 작성</h1>
 	
-	<form id="faqSv" action="${contextPath}/faq/save" method="post">
+	<form id="faqSv" action="${contextPath}/faq/faqSave" method="post">
 		<input type="text" id="faqTitle" name="faqTitle"><br>
 		<textarea rows="5" cols="50" name="faqContent"></textarea><br><br>
 		<button>등록</button>

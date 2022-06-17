@@ -10,11 +10,12 @@ import com.tp.yogioteur.domain.FaqDTO;
 @Mapper
 public interface FaqMapper {
 
-	public List<FaqDTO> selectFaqList(Map<String, Object> map);
-	public int selectFaqCount();
 	
+	public List<FaqDTO> selectFaqList(Map<String, Object> map); // 목록보기
+	public int selectFaqCount();
 	
 	public FaqDTO selectFaqByNo(Long faqNo);
 	public int insertFaq(FaqDTO faq);
 	public int deleteFaq(Long faqNo);
+	
 }
