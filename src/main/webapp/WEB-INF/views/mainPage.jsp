@@ -87,9 +87,22 @@
 </style>
 </head>
 <script>
-  $(function(){
-	$('#checkIn').datepicker('setDate', '+0');
-  });	
+$( function() {
+	 $("#checkIn").datepicker({
+	    });
+	    var myDate = new Date();
+	    var month = myDate.getMonth() + 1;
+	    var checkIn = myDate.getFullYear() + '.' + month+ '.' + myDate.getDate();
+	    $("#checkIn").val(checkIn);
+	    
+	 $("#checkOut").datepicker({
+	    });
+	    var myDate = new Date();
+	    var month = myDate.getMonth() + 1;
+	    var checkOut = myDate.getFullYear() + '.' + month+ '.' + myDate.getDate();
+	    $("#checkOut").val(checkOut);
+	    
+  } );
 </script>
 <body>
 	
@@ -121,8 +134,9 @@
 		
 		<div class="searchBar">
 				CHECK IN/ OUT
-				<br>
 				<input type="text" id="checkIn">
+				~
+				<input type="text" id="checkOut">
 		</div>
 		
 		<div class="weather_api">
