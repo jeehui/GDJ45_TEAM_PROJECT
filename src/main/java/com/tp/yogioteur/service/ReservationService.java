@@ -1,5 +1,8 @@
 package com.tp.yogioteur.service;
 
-public interface ReservationService {
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
+public interface ReservationService {
+	public void payments(HttpServletRequest request, HttpServletResponse response);
 }

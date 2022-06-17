@@ -13,12 +13,12 @@ import lombok.NoArgsConstructor;
 @Builder
 public class ReservationDTO {
 
-	private Long reserNo;
+	private String reserNo;
 	private Long memberNo;
 	private Long roomNo;
 	private Long nonNo;
 	private Date reserCheckin;
 	private Date reserCheckout;
-	private Integer reserCnt;
+	private Integer reserPeople;
 	private Integer reserFood;
 }
