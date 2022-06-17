@@ -83,6 +83,14 @@
 		display: flex;
 	}
 	
+	.searchBar > ul{
+		display: flex;
+		justify-content: space-between;
+		font-size: 18px;
+		color: white;
+		
+	}
+	
 	
 </style>
 </head>
@@ -133,10 +141,19 @@ $( function() {
 	<div class="center">
 		
 		<div class="searchBar">
-				CHECK IN/ OUT
-				<input type="text" id="checkIn">
-				~
-				<input type="text" id="checkOut">
+			
+			<div id="checkInOut">CHECK IN/OUT</div>			
+				
+			<div id="checkCount">
+			
+					<div>객실</div>			
+					<div>인원수</div>			
+			
+			</div>
+				<br>
+			<input type="text" id="checkIn">
+			~
+			<input type="text" id="checkOut">
 		</div>
 		
 		<div class="weather_api">
