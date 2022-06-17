@@ -29,6 +29,15 @@
 	}
 
 </script>
+<style>
+	ul, li {
+		list-style:none;
+	}
+	.btnToggle:hover .{
+		display :block;
+	}
+	
+</style>
 </head>
 <body>
 
@@ -40,24 +49,21 @@
 	
 	<input type="button" value="목록보기" id="faqListSel">
 	
-	<table border="1">
-		<tbody>
+	<ul class ="toggleList">
 			<c:forEach items="${faqs}" var="faq">
-				<tr>
-					<td>${faq.faqTitle}</td>
-					<td>${faq.faqContent}</td>
-					<td><input type="button" value="삭제" id="faqBtnRemove" data-faq_no = "${faq.faqNo}" onclick="fnRemove(this)"></td>
-				</tr>	
+				<li>
+					<div class="titArea">
+						<span>${faq.faqTitle}</span>
+						<button type="button" class="btnToggle">상세내용보기</button>
+					</div>
+					<div class="toggleCont">
+						<div class="toggleInner">${faq.faqContent}</div>
+					</div>
+					<input type="button" value="삭제" id="faqBtnRemove" data-faq_no = "${faq.faqNo}" onclick="fnRemove(this)">
+				</li>	
 			</c:forEach>
-		</tbody>
-		<tfoot>
-			<tr>
-				<td colspan="2">
-					${paging}
-				</td>
-			</tr>
-		</tfoot>
-	</table>
+	</ul>
+			<div>${paging}</div>
 	
 	
 	
