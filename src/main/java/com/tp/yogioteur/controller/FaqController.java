@@ -21,7 +21,7 @@ public class FaqController {
 	@GetMapping("/faq/faqList")
 	public String faqList(HttpServletRequest request, Model model) {
 		faqService.findFaqs(request, model);
-		return "faq/faqList";
+		return "faq/faqSearch";
 	}
 	
 	@GetMapping("/faq/faqSavePage")
@@ -47,4 +47,11 @@ public class FaqController {
 		redirectAttributes.addFlashAttribute("type", "delete");
 		return "redirect:/faq/faqResult";
 	}
+	
+	@GetMapping("/faq/faqSearch")
+	public String faqSearch(HttpServletRequest request, Model medle) {
+		faqService.selectfaqSearch(request, medle);
+		return "faq/faqSearch";
+	}
+	
 }

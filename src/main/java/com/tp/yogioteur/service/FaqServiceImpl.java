@@ -58,5 +58,37 @@ public class FaqServiceImpl implements FaqService {
 	public int remove(Long faqNo) {
 		return faqMapper.deleteFaq(faqNo);
 	}
+	
+	@Override
+	public void selectfaqSearch(HttpServletRequest request, Model model) {
+		
+		Optional<String> opt = Optional.ofNullable(request.getParameter("page"));
+		int page = Integer.parseInt(opt.orElse("1"));
+		
+		String faqQuery = request.getParameter("faqQuery");
+		String begin = request.getParameter("begin");
+		String end = request.getParameter("end");
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("faqQuery", faqQuery);
+		map.put("begin", begin);
+		map.put("end", end);
+		
+		int findRecord = faqMapper.selectFindCount(map);
+		
+		PageUtils pageUtils = new PageUtils();
+		pageUtils.setPageEntity(findRecord, page);
+		
+		map.put("beginRecord", pageUtils.getBeginRecord());
+		map.put("endRecord", pageUtils.getEndRecord());
+		
+		List<FaqDTO> faqs = faqMapper.selectfaqSearch(map);
+		
+		model.addAttribute("faqs", faqs);
+		model.addAttribute("beginNo", findRecord - pageUtils.getRecordPerPage() * (page - 1));
+		model.addAttribute("paging", pageUtils.getPaging(request.getContextPath() + "/faq/faqSearch?faqQuery=" + faqQuery));
+		
+		
+	}
 
 }
