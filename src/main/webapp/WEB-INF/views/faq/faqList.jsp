@@ -12,6 +12,18 @@
 <script src="../resources/js/jquery-3.6.0.js"></script>
 <script>
 
+	$(function(){
+		fnSearch();
+	})
+	
+	function fnSearch(){
+		
+		var 
+		
+	}
+
+
+
 	function fnRemove(no){		
 			if(confirm('삭제할까요?')){
 				location.href='${contextPath}/faq/remove?faqNo=' + $(no).data('faq_no');
@@ -27,7 +39,7 @@
 	
 	<br>
 	<form id="faqInput">
-		<input type="text" id="faqSearch" name="faqSearch" >
+		<input type="text" id="faqQuery" name="faqQuery" >
 		<input type="button"  id="faqSearchBtn" name="faqSearchBtn" value="검색">	
 	</form>
 	

@@ -7,8 +7,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!-- 목록 -->
 	<select id="selectFaqList" parameterType="Map" resultType="FaqDTO">
-		SELECT FAQ_NO, FAQ_TITLE, FAQ_CONTENT,FAQ_CREATED
-		  FROM FAQ
+		SELECT A.RN, A.FAQ_NO, A.FAQ_TITLE, A.FAQ_CONTENT, A.FAQ_CREATED
+		  FROM (SELECT ROW_NUMBER() OVER(ORDER BY FAQ_CREATED DESC) AS RN, FAQ_NO, FAQ_TITLE, FAQ_CONTENT,FAQ_CREATED
+		  		  FROM FAQ) A
+		 WHERE A.RN BETWEEN #{beginRecord} AND #{endRecord}	
 	</select>
 	
 	
@@ -35,6 +37,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		  FROM FAQ
 		 WHERE FAQ_NO = #{faqNo}
 	</delete>
+	
 	<!-- 검색 -->
+	
+	
+	
 	
 </mapper>

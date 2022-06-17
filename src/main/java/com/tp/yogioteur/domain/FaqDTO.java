@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 
 public class FaqDTO {
 
+	private Long rn;
 	private Long faqNo;
 	private String faqTitle;
 	private String faqContent;

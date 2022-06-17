@@ -24,10 +24,21 @@ public class FaqServiceImpl implements FaqService {
 	@Override
 	public void findFaqs(HttpServletRequest request, Model model) {
 
+		int totalRecord = faqMapper.selectFaqCount();
+		Optional<String> opt = Optional.ofNullable(request.getParameter("page"));
+		int page = Integer.parseInt(opt.orElse("1"));
+		
+		PageUtils pageUtils = new PageUtils();
+		pageUtils.setPageEntity(totalRecord, page);
+		
 		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("beginRecord", pageUtils.getBeginRecord());
+		map.put("endRecord", pageUtils.getEndRecord());
+		
 		List<FaqDTO> faqs = faqMapper.selectFaqList(map);
 		model.addAttribute("faqs", faqs);
-
+		model.addAttribute("totalRecord", totalRecord);
+		model.addAttribute("paging", pageUtils.getPaging(request.getContextPath() + "/faq/faqList"));
 	}
 
 	@Override
