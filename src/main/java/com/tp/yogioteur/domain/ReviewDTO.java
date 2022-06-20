@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 
 public class ReviewDTO {
 	
+	private Long rna;
 	private Long reviewNo;
 	private Long memberNo;
 	private String reviewTitle;

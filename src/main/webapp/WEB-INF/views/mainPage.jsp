@@ -18,6 +18,7 @@
 	<h1>MAIN PAGE</h1>
 	
 	<a href="${contextPath}/faq/faqList">faq</a>
+	<a href="${contextPath}/review/reviewList">리뷰</a>
 	
 </body>
 </html>
