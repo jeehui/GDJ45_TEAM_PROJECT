@@ -21,6 +21,11 @@ public class ReservationController {
 		return "reservation/reservationPage";
 	}
 	
+	@GetMapping("reservation/reservationConfirm")
+	public String reservationConfirm() {
+		return "reservation/reservationConfirm";
+	}
+	
 	@PostMapping("/payments")
 	public void payments(HttpServletRequest request, HttpServletResponse response) {
 		reservationService.payments(request, response);

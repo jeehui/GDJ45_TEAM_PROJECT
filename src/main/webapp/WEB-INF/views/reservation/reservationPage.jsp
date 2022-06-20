@@ -10,18 +10,20 @@
 <script src="../resources/js/jquery-3.6.0.js"></script>
 <script>
 	$(document).ready(function(){
-		fnMemberInfo();
-		fnPayment();
+		$('#f').on('submit', function(event){
+			if($('#privacy').is(':checked') == false){
+				alert('필수 약관에 동의하세요.')
+				event.preventDefault();
+				return false;
+			}
+			return true;
+		})
 	})
 	function fnMemberInfo(){
 		
 	}
 	function fnPayMent(){
-		$('#payment').on('click', function(){
-			if($('#privacy').is(':checked') == false){
-				alert('필수 약관에 동의하세요.')
-			}
-		})
+		
 	}
 	function count(type) {
 		const cntElement1 = document.getElementById('cnt1');
@@ -63,31 +65,32 @@
 	
 	<hr>
 	
-	<div>
-		조식 선택 <input type="button" value="+" onclick="count('plus1')">
-					<span><input type="text" id="cnt1" name="food" value="0" style="width:10px;border:none;border:0px" readonly></span>
-				  <input type="button" value="-" onclick="count('minus1')"><br>
-		투숙 날짜 <br>
-		객실 인원 <input type="button" value="+" onclick="count('plus2')">
-					<span><input type="text" id="cnt2" name="people" value="0" style="width:10px;border:none;border:0px" readonly></span>
-				  <input type="button" value="-" onclick="count('minus2')"><br>
-	</div>
+	
 	
 	<h3>예약자 정보</h3>
 	
 	<form id="f" action="${contextPath}/payments" method="post">
+			<div>
+				조식 선택 <input type="button" value="+" onclick="count('plus1')">
+							<span><input type="text" id="cnt1" name="food" value="0" style="width:10px;border:none;border:0px" readonly></span>
+						  <input type="button" value="-" onclick="count('minus1')"><br>
+				투숙 날짜 <br>
+				객실 인원 <input type="button" value="+" onclick="count('plus2')">
+							<span><input type="text" id="cnt2" name="people" value="0" style="width:10px;border:none;border:0px" readonly></span>
+						  <input type="button" value="-" onclick="count('minus2')"><br>
+			</div>
 		<c:if test="${session == null }">
 			<div>
-				<input type="hidden" name="memberNo" id="memberNo" value="${session.memberNo}">
-				<input type="hidden" name="roomNo" id="roomNo" value="${room.roomNo}">
-				이름 <input type="text" name="name" id="name" value="${session.name}" readonly><br>
-				연락처 <input type="text" name="tel" id="tel" value="${session.tel}" readonly><br>
-				이메일 <input type="text" name="email" id="email" value="${session.email}" readonly><br>
-				체크인 <input type="text" name="checkin" id="checkin" value="0" readonly>
-				체크아웃 <input type="text" name="checkout" id="checkout" value="0" readonly>
+				<input type="hidden" name="memberNo" id="memberNo" value="1">
+				<input type="hidden" name="roomNo" id="roomNo" value="1">
+				이름 <input type="text" name="name" id="name" value="ksj" readonly><br>
+				연락처 <input type="text" name="tel" id="tel" value="01012345678" readonly><br>
+				이메일 <input type="text" name="email" id="email" value="rlawo32@naver.com" readonly><br>
+				체크인 <input type="text" name="checkin" id="checkin" value="" readonly>
+				체크아웃 <input type="text" name="checkout" id="checkout" value="" readonly>
 			</div>
 		</c:if>
-		<c:if test="${session == null }">
+		<c:if test="${session != null }">
 			<div>
 				비회원 이름 <input type="text" name="nonName" id="nonName" value="${session.nonName}" readonly>
 				비회원 연락처 <input type="text" name="nonTel" id="nonTel" value="${session.nonTel}" readonly><br>
@@ -96,11 +99,11 @@
 		
 		<textarea>개인정보보호법에 따라 ...</textarea><br>
 		
-		<input type="checkbox" id="privacy" class="blind checkOne">
+		<input type="checkbox" id="privacy">
 		<label for="privacy" class="item">개인정보 수집에 동의합니다.</label><br>
 		<br><br>
 		
-		<input type="button" value="돌아가기" onclick="location.href='${contextPath}/객실상세페이지/'">
+		<input type="button" value="돌아가기" onclick="location.href='${contextPath}'">
 		<button id="payment">결제하기</button>
 	</form>
 	

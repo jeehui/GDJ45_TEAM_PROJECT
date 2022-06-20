@@ -21,26 +21,24 @@ public class ReservationServiceImpl implements ReservationService {
 	@Override
 	public void payments(HttpServletRequest request, HttpServletResponse response) {
 		
-		String no = ReservationUtils.reservataionCode(8);
+		String no = ReservationUtils.reservataionCode(8).trim();
 		Long memberNo = Long.parseLong(request.getParameter("memberNo"));
 		Long roomNo = Long.parseLong(request.getParameter("roomNo"));
-		Integer food = Integer.parseInt(request.getParameter("food"));
-		Integer people = Integer.parseInt(request.getParameter("people"));
-				
-		
+		Long nonNo = 1L;
+		Long food = Long.parseLong(request.getParameter("food"));
+		Long people = Long.parseLong(request.getParameter("people"));
 		
 		ReservationDTO reservation = ReservationDTO.builder()
-				.reserNo("RN" + no)
+				.reserNo("RN_" + no)
 				.memberNo(memberNo)
 				.roomNo(roomNo)
-				.nonNo(null)
-				.reserCheckin(null)
-				.reserCheckout(null)
+				.nonNo(nonNo)
 				.reserFood(food)
 				.reserPeople(people)
 				.build();
 		
 		int res = reservationMapper.reservationInsert(reservation);
+		// hit 형식
 		
 		// 응답
 		try {
@@ -49,7 +47,7 @@ public class ReservationServiceImpl implements ReservationService {
 			if(res == 1) {
 				out.println("<script>");
 				out.println("alert('결제 완료 되었습니다.')");
-				out.println("location.href='" + request.getContextPath() + "'");
+				out.println("location.href='" + request.getContextPath() + "/reservation/reservationConfirm'");
 				out.println("</script>");
 				out.close();
 			} else {
