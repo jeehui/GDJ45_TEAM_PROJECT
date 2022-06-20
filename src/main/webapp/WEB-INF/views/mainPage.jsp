@@ -78,35 +78,121 @@
 	}
 	
 	
-	.searchBar{
+	 .searchBar{
 		display: flex;
 		align-items: center;
-		font-size: 20px;
+		font-size: 25px;
 		color: white;
+		padding-left: 160px;
 		
+	} 
+	
+	button {
+	  margin: 5px;
+	  outline: none;
+	}
+	.custom-btn {
+	  width: 122px;
+	  height: 45px;
+	  padding: 8px 20px;
+	  border: 2px solid #000;
+	  font-family: 'Lato', sans-serif;
+	  font-weight: 500;
+	  font-size: 18px;
+	  background: transparent;
+	  cursor: pointer;
+	  transition: all 0.3s ease;
+	  position: relative;
+	  display: inline-block;
 	}
 	
-	form {
-		
-		padding-left: 151px
-		
+	/* 13 */
+	.btn-13 {
+	  background: #000;
+	  color: #fff;
+	  z-index: 1;
 	}
+	.btn-13:after {
+	  position: absolute;
+	  content: "";
+	  width: 100%;
+	  height: 0;
+	  bottom: 0;
+	  left: 0;
+	  z-index: -1;
+	  background: #fff;
+	  transition: all 0.3s ease;
+	}
+	.btn-13:hover {
+	  color: #000;
+	}
+	.btn-13:hover:after {
+	  top: 0;
+	  height: 100%;
+	}
+	.btn-13:active {
+	  top: 2px;
+	}
+	.btn-14 {
+	  background: #000;
+	  color: #fff;
+	  z-index: 1;
+	}
+	.btn-14:after {
+	  position: absolute;
+	  content: "";
+	  width: 100%;
+	  height: 0;
+	  bottom: 0;
+	  left: 0;
+	  z-index: -1;
+	  background: #fff;
+	  transition: all 0.3s ease;
+	}
+	.btn-14:hover {
+	  color: #000;
+	}
+	.btn-14:hover:after {
+	  top: 0;
+	  height: 100%;
+	}
+	.btn-14:active {
+	  top: 2px;;
+	}
+	
 	
 	
 </style>
 </head>
-<script>
-$( function() {
-	 $("#checkIn").datepicker({
-	    });
-	    
-	 $("#checkOut").datepicker({
-	    });
-	 
+<script type="text/javascript">
 	
-	 
-	 
-  } );
+	//페이지 로드 이벤트
+	
+	$(document).ready(function(){
+		
+		
+		 $("#checkIn").datepicker({
+		    });
+		    
+		 $("#checkOut").datepicker({
+		    });
+		
+		//폼의 서브밋 이벤트
+		$('#f').on('submit', (ev)=>{
+			
+			if($('#checkIn').val() == '' || $('#checkOut').val() == ''){
+				alert('날짜를 선택해주세요.');
+				ev.preventDefault();
+			}
+			
+		})
+		
+		
+	})
+	
+  //함수
+  
+  
 </script>
 <body>
 	
@@ -136,18 +222,19 @@ $( function() {
 	
 	<div class="center">
 		
-		<form action="${contextPath}/room/roomPage" method="post">
+		<form id="f" action="${contextPath}/room/roomList" method="post">
 		
 		<div class="searchBar">
 			
-			<div id="checkInOut">
+			<div id="checkInOut" style= "padding-left: 200px;">
 			CHECK IN/OUT
-			<input type="text" id="checkIn">
+			<input type="text" id="checkIn" name="checkIn" style="padding-top: 8px;">
 			~
-			<input type="text" id="checkOut">
+			<input type="text" id="checkOut" name="checkOut" style="padding-top: 8px;">
 			</div>	
 			&nbsp;&nbsp;	
-			<button><span>검색</span></button>
+			<button class="custom-btn btn-13">검색</button>
+			<button class="custom-btn btn-14" type="reset">초기화</button>
 		</div>
 		
 		</form>
