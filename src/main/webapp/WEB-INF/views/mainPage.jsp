@@ -77,17 +77,18 @@
 		
 	}
 	
-	.weather_api{
-		width: 100%;
-		height: 300px;
-		display: flex;
-	}
 	
 	.searchBar{
 		display: flex;
 		align-items: center;
 		font-size: 20px;
 		color: white;
+		
+	}
+	
+	form {
+		
+		padding-left: 151px
 		
 	}
 	
@@ -98,18 +99,13 @@
 $( function() {
 	 $("#checkIn").datepicker({
 	    });
-	    var myDate = new Date();
-	    var month = myDate.getMonth() + 1;
-	    var checkIn = myDate.getFullYear() + '.' + month+ '.' + myDate.getDate();
-	    $("#checkIn").val(checkIn);
 	    
 	 $("#checkOut").datepicker({
 	    });
-	    var myDate = new Date();
-	    var month = myDate.getMonth() + 1;
-	    var checkOut = myDate.getFullYear() + '.' + month+ '.' + myDate.getDate();
-	    $("#checkOut").val(checkOut);
-	    
+	 
+	
+	 
+	 
   } );
 </script>
 <body>
@@ -140,6 +136,8 @@ $( function() {
 	
 	<div class="center">
 		
+		<form action="${contextPath}/room/roomPage" method="post">
+		
 		<div class="searchBar">
 			
 			<div id="checkInOut">
@@ -147,8 +145,12 @@ $( function() {
 			<input type="text" id="checkIn">
 			~
 			<input type="text" id="checkOut">
-			</div>			
+			</div>	
+			&nbsp;&nbsp;	
+			<button><span>검색</span></button>
 		</div>
+		
+		</form>
 		
 		<div class="weather_api">
 		
