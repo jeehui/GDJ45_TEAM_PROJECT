@@ -10,6 +10,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	</settings>
 	
 	<typeAliases>
+		<typeAlias type="com.tp.yogioteur.domain.MemberDTO" alias="MemberDTO" />
+		<typeAlias type="com.tp.yogioteur.domain.SignOutMemberDTO" alias="SignOutMemberDTO" />
 		<typeAlias type="com.tp.yogioteur.domain.ReservationDTO" alias="ReservationDTO" />
 	</typeAliases>
 	
