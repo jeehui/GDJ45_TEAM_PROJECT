@@ -12,20 +12,4 @@ public class MainController {
 		return "mainPage";
 	}
 	
-	@GetMapping("/member/loginPage")
-	public String loginPage() {
-		return "member/login";
-	}
-	
-	@GetMapping("/member/signInPage")
-	public String signInPage() {
-		return "member/signIn";
-	}
-	
-	
-	@PostMapping("/member/login")
-	public void login() {
-		
-	}
-	
 }

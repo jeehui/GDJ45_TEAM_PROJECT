@@ -14,10 +14,15 @@
 </head>
 <body>
 	
-	<jsp:include page="./layout/header.jsp"></jsp:include>
+	<!-- 로그인 이전 -->
+	<a href ="${contextPath}/member/loginPage">로그인</a>
+	<a href ="${contextPath}/member/agreePage">회원가입</a>	
+
+
+	<!-- 로그인 이후 -->
+
 	
 	<h1>MAIN PAGE</h1>
-	
 
 	
 </body>

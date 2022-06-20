@@ -3,12 +3,14 @@ package com.tp.yogioteur.domain;
 import java.sql.Date;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class MemberDTO {
 	
 	private Long memberNo;
@@ -17,10 +19,10 @@ public class MemberDTO {
 	private String memberId;
 	private String memberPw;
 	private Integer memberPhone;
-	private Integer agreeState;
-	private Date memberDate;
-	private String memberSessionId;
 	private Integer memberBirth;
+	private Integer agreeState;
+	private Date signIn;
+	private String memberSessionId;
 
 	
 }

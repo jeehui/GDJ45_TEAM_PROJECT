@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.tp.yogioteur.mapper.MemberMapper">
+	
+	<select id="selectMemberById" parameterType="String" resultType="MemberDTO">
+	SELECT MEMBER_NO, MEMBER_ID, MEMBER_PW, MEMBER_EMAIL, MEMBER_NAME, MEMBER_PHONE, MEMBER_BIRTH, AGREE_STATE, SIGN_IN, MEMBER_SESSIONID
+		  FROM MEMBER
+	 WHERE MEMBER_ID = #{memberId}	
+	</select>
+	
+	<select id="selectMemberByEmail" parameterType="String" resultType="MemberDTO">
+	SELECT MEMBER_NO, MEMBER_ID, MEMBER_PW, MEMBER_EMAIL, MEMBER_NAME, MEMBER_PHONE, MEMBER_BIRTH, AGREE_STATE, SIGN_IN, MEMBER_SESSIONID
+		  FROM MEMBER
+	 WHERE MEMBER_EMAIL = #{memberEmail}	
+	</select>
+	
+	<insert id="insertMember" parameterType="MemberDTO">
+	INSERT INTO MEMBER
+			(MEMBER_NO, MEMBER_ID, MEMBER_PW, MEMBER_EMAIL, MEMBER_NAME, MEMBER_PHONE, MEMBER_BIRTH, AGREE_STATE, SIGN_IN)
+		VALUES
+			(MEMBER_SEQ.NEXTVAL, #{memberId}, #{memberPw}, #{memberEmail}, #{memberName}, #{memberPhone}, #{memberBirth}, #{agreeState}, SYSDATE)
+	</insert>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</mapper>
