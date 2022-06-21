@@ -172,9 +172,11 @@
 		
 		
 		 $("#checkIn").datepicker({
+			 dateFormat: 'yymmdd'
 		    });
 		    
 		 $("#checkOut").datepicker({
+			 dateFormat: 'yymmdd'
 		    });
 		
 		//폼의 서브밋 이벤트
@@ -188,6 +190,7 @@
 		})
 		
 		
+
 	})
 	
   //함수
