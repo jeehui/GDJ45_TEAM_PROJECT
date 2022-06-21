@@ -8,13 +8,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-<<<<<<< HEAD
-@NoArgsConstructor
-@AllArgsConstructor
-=======
 @AllArgsConstructor
 @NoArgsConstructor
->>>>>>> db4877f19f2f7dd3c0f3035a5735a68af3cfb035
 @Builder
 public class SignOutMemberDTO {
 

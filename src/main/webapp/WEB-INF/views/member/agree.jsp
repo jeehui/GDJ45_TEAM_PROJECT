@@ -25,10 +25,7 @@
 </style>
 <script src="../resources/js/jquery-3.6.0.js"></script>
 <script>
-<<<<<<< HEAD
-=======
 
->>>>>>> db4877f19f2f7dd3c0f3035a5735a68af3cfb035
 	$(function(){
 		
 		$('#checkAll').on('click', function(){
@@ -45,10 +42,7 @@
 		
 		$('.checkOne').on('click', function(){
 			let checkAll = true;							
-<<<<<<< HEAD
-=======
 
->>>>>>> db4877f19f2f7dd3c0f3035a5735a68af3cfb035
 			$.each($('.checkOne'), function(i, checkOne){
 				if($(checkOne).is(':checked') == false){	
 					$('#checkAll').prop('checked', false);
@@ -118,9 +112,5 @@
 			
 	</form>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> db4877f19f2f7dd3c0f3035a5735a68af3cfb035
 </body>
 </html>

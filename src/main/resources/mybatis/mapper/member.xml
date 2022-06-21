@@ -4,11 +4,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <mapper namespace="com.tp.yogioteur.mapper.MemberMapper">
-<<<<<<< HEAD
-
-=======
-	
->>>>>>> db4877f19f2f7dd3c0f3035a5735a68af3cfb035
 	<select id="selectMemberById" parameterType="String" resultType="MemberDTO">
 	SELECT MEMBER_NO, MEMBER_ID, MEMBER_PW, MEMBER_EMAIL, MEMBER_NAME, MEMBER_PHONE, MEMBER_BIRTH, AGREE_STATE, SIGN_IN, MEMBER_SESSIONID
 		  FROM MEMBER
@@ -29,9 +24,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	
 	
-	
-	
-<<<<<<< HEAD
 	<select id="selectMemberByIdPw" parameterType="MemberDTO" resultType="MemberDTO">
 	SELECT MEMBER_NO, MEMBER_ID, MEMBER_PW, MEMBER_EMAIL, MEMBER_NAME, MEMBER_PHONE, MEMBER_BIRTH, AGREE_STATE, SIGN_IN, MEMBER_SESSIONID
 		FROM MEMBER
@@ -51,13 +43,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM SIGN_OUT_MEMBER
 	 WHERE ID = #{memberId}
 	</select>
-=======
-	
-	
->>>>>>> db4877f19f2f7dd3c0f3035a5735a68af3cfb035
-	
-	
-	
 	
 	
 	

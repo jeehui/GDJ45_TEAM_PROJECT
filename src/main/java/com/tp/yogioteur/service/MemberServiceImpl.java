@@ -19,20 +19,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tp.yogioteur.domain.MemberDTO;
-<<<<<<< HEAD
 import com.tp.yogioteur.domain.SignOutMemberDTO;
-=======
->>>>>>> db4877f19f2f7dd3c0f3035a5735a68af3cfb035
 import com.tp.yogioteur.mapper.MemberMapper;
 import com.tp.yogioteur.util.SecurityUtils;
 
 @Service
 public class MemberServiceImpl implements MemberService {
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> db4877f19f2f7dd3c0f3035a5735a68af3cfb035
 	@Autowired
 	private MemberMapper memberMapper;
 	
@@ -102,11 +95,10 @@ public class MemberServiceImpl implements MemberService {
 		String memberId = SecurityUtils.xss(request.getParameter("memberId"));        
 		String memberPw = SecurityUtils.sha256(request.getParameter("memberPw"));    
 		String memberName = SecurityUtils.xss(request.getParameter("memberName"));   
-<<<<<<< HEAD
+
 		String memberPhone =request.getParameter("memberPhone");    
-=======
-		Integer memberPhone = Integer.parseInt(request.getParameter("memberPhone"));    
->>>>>>> db4877f19f2f7dd3c0f3035a5735a68af3cfb035
+
+
 		Integer memberBirth = Integer.parseInt(request.getParameter("memberBirth"));   
 		String memberEmail = SecurityUtils.xss(request.getParameter("memberEmail")); 
 		String info = request.getParameter("info");
@@ -138,11 +130,11 @@ public class MemberServiceImpl implements MemberService {
 			PrintWriter out = response.getWriter();
 			if(res == 1) {
 				out.println("<script>");
-<<<<<<< HEAD
+
 				out.println("alert('회원 가입이 완료되었습니다.')");
-=======
+
 				out.println("alert('회원 가입되었습니다.')");
->>>>>>> db4877f19f2f7dd3c0f3035a5735a68af3cfb035
+
 				out.println("location.href='" + request.getContextPath() + "'");
 				out.println("</script>");
 				out.close();
@@ -160,7 +152,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	
-<<<<<<< HEAD
+
 	@Override
 	public MemberDTO login(HttpServletRequest request) {
 		
@@ -184,6 +176,5 @@ public class MemberServiceImpl implements MemberService {
 	public SignOutMemberDTO findSignOutMember(String memberId) {
 		return memberMapper.selectSignOutMemberByMemberId(memberId);
 	}
-=======
->>>>>>> db4877f19f2f7dd3c0f3035a5735a68af3cfb035
+
 }

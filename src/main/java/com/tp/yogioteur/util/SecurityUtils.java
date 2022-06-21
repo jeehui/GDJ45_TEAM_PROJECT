@@ -5,10 +5,7 @@ import java.security.MessageDigest;
 import org.apache.commons.codec.binary.Base64;
 
 public class SecurityUtils {
-<<<<<<< HEAD
-	
-=======
->>>>>>> db4877f19f2f7dd3c0f3035a5735a68af3cfb035
+
 	// XSS
 	public static String xss(String str) {
 		str = str.replaceAll("<", "&lt;");
@@ -56,8 +53,4 @@ public class SecurityUtils {
 	public static String decodeBase64(String str) {
 		return new String(Base64.decodeBase64(str.getBytes()));
 	}
-<<<<<<< HEAD
-	
-=======
->>>>>>> db4877f19f2f7dd3c0f3035a5735a68af3cfb035
 }
