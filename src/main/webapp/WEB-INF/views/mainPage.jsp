@@ -206,25 +206,8 @@
   
 </script>
 <body>
-	<div class="head">
 	
-		<div class="header">
-				<a href="${contextPath}/review/reviewPage">REVIEW</a>
-				<a href="${contextPath}/faq/faqPage">FAQ</a>
-		</div>
-		
-		<div class="title">
-			<a href="${contextPath}/mainPage">YOGIOTEUR</a>
-		</div>
-		 
-		<div class="header2">
-				<a href="${contextPath}/login/loginPage" >로그인</a>
-				<a href="${contextPath}/signUp/signUpPage" >회원가입</a>
-		</div>
-		
-		
-		
-	</div>
+	<jsp:include page="layout/header.jsp"></jsp:include>
 	
 	<div class="background">
 		<img src="resources/images/hotel.jpg" alt="main" width="100%" height="850px">
@@ -257,7 +240,7 @@
 
 	
 </body>
-
+</section>
 <footer>
 
 	<div class="end_info">
@@ -275,7 +258,7 @@
 				<li><i class="fa-brands fa-instagram"></i></li>
 			</ul>
 				
-		
+			<a href="${contextPath}/reservation/reservationPage">예약</a>
 	</div>
 
 </footer>
