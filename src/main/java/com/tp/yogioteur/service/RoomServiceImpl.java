@@ -1,6 +1,7 @@
 package com.tp.yogioteur.service;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.ui.Model;
@@ -19,6 +20,8 @@ public class RoomServiceImpl implements RoomService {
 import java.io.File;
 import java.io.PrintWriter;
 import java.nio.file.Files;
+=======
+>>>>>>> sungjae
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -29,7 +32,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.tp.yogioteur.mapper.RoomMapper;
-import com.tp.yogioteur.util.MyFileUtils;
 
 
 @Service
