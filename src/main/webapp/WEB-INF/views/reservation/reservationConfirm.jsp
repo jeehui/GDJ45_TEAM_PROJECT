@@ -20,8 +20,8 @@
 	
 	체크인             체크아웃
 	
-	예약번호
-	투숙인원
+	예약번호${reservation.reserNo}
+	투숙인원${reservation.reserPeople}
 	투숙객 이름
 	투숙객 전화번호
 	

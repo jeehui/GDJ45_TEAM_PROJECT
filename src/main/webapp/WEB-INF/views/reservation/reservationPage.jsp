@@ -8,6 +8,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="../resources/js/jquery-3.6.0.js"></script>
+<!-- iamport.payment.js -->
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+
 <script>
 	$(document).ready(function(){
 		$('#f').on('submit', function(event){
@@ -19,26 +22,27 @@
 			return true;
 		})
 	})
-	function fnMemberInfo(){
-		
-	}
-	function fnPayMent(){
-		
-	}
+	
 	function count(type) {
 		const cntElement1 = document.getElementById('cnt1');
 		const cntElement2 = document.getElementById('cnt2');
+		const sum1 = document.getElementById('sum');
+		
 		let number1 = cntElement1.value;
 		let number2 = cntElement2.value;
+		let sumVal = sum1.value; 
 		
 		if(type == 'plus1') {
 			number1 = parseInt(number1) + 1;
+			sumVal = parseInt(number1) * 45000;
 		} else if(type == 'minus1') { 
 			if(cntElement1.value != 0) {
 				number1 = parseInt(number1) - 1;
+				sumVal = parseInt(sumVal) - 45000;
 			}
 		}
 		$('#cnt1').attr('value', number1);
+		$('#sum').attr('value', sumVal);
 		
 		if(type == 'plus2') {
 			number2 = parseInt(number2) + 1;
@@ -72,11 +76,12 @@
 	<form id="f" action="${contextPath}/payments" method="post">
 			<div>
 				조식 선택 <input type="button" value="+" onclick="count('plus1')">
-							<span><input type="text" id="cnt1" name="food" value="0" style="width:10px;border:none;border:0px" readonly></span>
-						  <input type="button" value="-" onclick="count('minus1')"><br>
+							<span><input type="text" id="cnt1" name="food" value="0" style="width:14px;border:none;border:0px" readonly></span>
+						  <input type="button" value="-" onclick="count('minus1')">
+						  	<input type="text" id="sum" name="sum" size="8" value="0" style="border:none;border:0px" readonly><br>
 				투숙 날짜 <br>
 				객실 인원 <input type="button" value="+" onclick="count('plus2')">
-							<span><input type="text" id="cnt2" name="people" value="0" style="width:10px;border:none;border:0px" readonly></span>
+							<span><input type="text" id="cnt2" name="people" value="0" style="width:14px;border:none;border:0px" readonly></span>
 						  <input type="button" value="-" onclick="count('minus2')"><br>
 			</div>
 		<c:if test="${session == null }">
@@ -97,7 +102,7 @@
 			</div>
 		</c:if>
 		
-		<textarea>개인정보보호법에 따라 ...</textarea><br>
+		<textarea readonly>개인정보보호법에 따라 ...</textarea><br>
 		
 		<input type="checkbox" id="privacy">
 		<label for="privacy" class="item">개인정보 수집에 동의합니다.</label><br>
