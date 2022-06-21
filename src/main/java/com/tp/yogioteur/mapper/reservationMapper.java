@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 import com.tp.yogioteur.domain.ReservationDTO;
 
 @Mapper
-public interface reservationMapper {
+public interface ReservationMapper {
 	
 	public int reservationInsert(ReservationDTO reservation);
 	public List<ReservationDTO> reservationSelect(); 

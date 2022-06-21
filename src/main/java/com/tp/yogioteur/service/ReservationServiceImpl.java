@@ -10,14 +10,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.tp.yogioteur.domain.ReservationDTO;
-import com.tp.yogioteur.mapper.reservationMapper;
+import com.tp.yogioteur.mapper.ReservationMapper;
 import com.tp.yogioteur.util.ReservationUtils;
 
 @Service
 public class ReservationServiceImpl implements ReservationService {
 
 	@Autowired
-	private reservationMapper reservationMapper;
+	private ReservationMapper reservationMapper;
 	
 	@Override
 	public void payments(HttpServletRequest request, HttpServletResponse response) {
