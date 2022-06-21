@@ -22,10 +22,11 @@ public class MainController {
 		return "mainPage";
 	}
 	
-	@PostMapping("/room/roomList")
-	public String list(HttpServletRequest request, Model model) {
-		roomService.reservationRoom(request, model);
-		return "room/roomList";
+//	@PostMapping("/room/roomList")
+//	public String list(HttpServletRequest request, Model model) {
+//		roomService.reservationRoom(request, model);
+//		return "room/roomList";
+//	}
 	@GetMapping("/member/loginPage")
 	public String loginPage() {
 		return "member/login";

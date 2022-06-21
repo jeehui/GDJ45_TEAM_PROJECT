@@ -9,14 +9,12 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<setting name="mapUnderscoreToCamelCase" value="true"/>
 	</settings>
 	
-<<<<<<< HEAD
 	<typeAliases>
 		<typeAlias type="com.tp.yogioteur.domain.ReservationDTO" alias="ReservationDTO" />
 	</typeAliases>
-=======
+	
 	<!-- <typeAliases>
 		<typeAlias type="com.tp.yogioteur.domain.DTO" alias="DTO" />
 	</typeAliases> -->
->>>>>>> 010c9273248c98ff3072eb90e5994d58066240ad
 	
 </configuration>

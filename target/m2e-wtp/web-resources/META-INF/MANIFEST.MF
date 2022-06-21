@@ -1,9 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
-Built-By: rlawo
-=======
 Built-By: ￬ﾂﾬ￪ﾰﾁ
->>>>>>> 010c9273248c98ff3072eb90e5994d58066240ad
 Build-Jdk: 11.0.13
 Created-By: Maven Integration for Eclipse
 
