@@ -30,12 +30,12 @@ public class ReviewController {
 	
 	@PostMapping("/review/reviewSave")
 	public void reviewSave(MultipartHttpServletRequest multiparRequest, Model model) {
-		reviewService.ReviewSave(multiparRequest, model);
+		//reviewService.ReviewSave(multiparRequest, model);
 	}
 	
 	@GetMapping("/review/removeReview")
 	public void removeReview(HttpServletRequest request, HttpServletResponse response) {
-		reviewService.removeReview(request, response);
+		//reviewService.removeReview(request, response);
 	}
 	
 }
