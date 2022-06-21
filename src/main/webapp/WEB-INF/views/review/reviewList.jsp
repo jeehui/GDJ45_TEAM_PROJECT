@@ -13,8 +13,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script>
    
-   
-   
+  	
+	
+	 function fnRemove(rn){      
+	       if(confirm('삭제할까요?')){
+	          location.href='${contextPath}/review/remove?reviewNo=' + $(rn).data('review_no');
+	       }
+	 }
 
 </script>
 
@@ -43,13 +48,16 @@
    				</div>
    				
    			</div>
-   			<c:if test="${review.content} != null "></c:if>>
+   			<c:if test="${review.content} != null ">
 	   			<div class="adminReviewReply">
    					<div>
-   						관리자 댓글 : ${review.content}
+   						관리자 댓글 : 
    					</div>
    				</div>
-   			</if>
+   			</c:if>
+   			
+   			<input type="button" value="삭제" name="reviewRemoveBtn" data-review_no="${review.reviewNo}" onclick="fnReviewRemove(this)">
+   			
    		</div>
    </c:forEach>
    
