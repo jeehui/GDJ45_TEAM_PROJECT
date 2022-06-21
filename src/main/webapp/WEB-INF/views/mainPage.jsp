@@ -9,26 +9,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<<<<<<< HEAD
 <script>
 </script>
-</head>
-<body>
-	
-	
-	<h1>MAIN PAGE</h1>
-	
-	<a href="${contextPath}/faq/faqList">faq</a>
-	<a href="${contextPath}/review/reviewList">리뷰</a>
-	
-</body>
-=======
 <link href="https://fonts.googleapis.com/css2?family=Charis+SIL:wght@700&family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 <script src="https://kit.fontawesome.com/148c1051b1.js" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-
 <style type="text/css">
 	
 	body{

@@ -1,6 +1,5 @@
 package com.tp.yogioteur.mapper;
 
-<<<<<<< HEAD
 import java.util.List;
 import java.util.Map;
 
@@ -29,12 +28,4 @@ public interface ReviewMapper {
 	// 리뷰 삭제
 	public int deleteReview(Long reviewNo);
 	
-	
-	
-	
-	
-=======
-public interface ReviewMapper {
-
->>>>>>> main
 }
