@@ -1,8 +1,5 @@
 package com.tp.yogioteur.service;
 
-import java.io.File;
-import java.io.PrintWriter;
-import java.nio.file.Files;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -13,7 +10,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.tp.yogioteur.mapper.RoomMapper;
-import com.tp.yogioteur.util.MyFileUtils;
 
 
 @Service
