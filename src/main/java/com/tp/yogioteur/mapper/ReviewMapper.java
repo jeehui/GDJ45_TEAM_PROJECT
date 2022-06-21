@@ -1,5 +1,6 @@
 package com.tp.yogioteur.mapper;
 
+<<<<<<< HEAD
 import java.util.List;
 import java.util.Map;
 
@@ -32,4 +33,8 @@ public interface ReviewMapper {
 	
 	
 	
+=======
+public interface ReviewMapper {
+
+>>>>>>> main
 }

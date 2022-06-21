@@ -5,6 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.tp.yogioteur.mapper.ReviewMapper">
 
+<<<<<<< HEAD
 
 	<!-- 리뷰 갯수 -->
 	<select id="selectReviewCount" resultType="Integer">
@@ -50,5 +51,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		  FROM REVIEW
 		 WHRER REVIEW_NO = #{reviewNo}
 	</delete>
+=======
+	
+	
+	
+>>>>>>> main
 	
 </mapper>

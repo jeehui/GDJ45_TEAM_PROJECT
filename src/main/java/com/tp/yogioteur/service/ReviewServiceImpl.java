@@ -38,6 +38,13 @@ public class ReviewServiceImpl implements ReviewService {
 		
 		List<ReviewDTO> reviews = reviewMapper.selectReviewList(map);
 		
+<<<<<<< HEAD
+=======
+		model.addAttribute("totalRecord", totalRecord);
+		model.addAttribute("reviews", reviews);
+		model.addAttribute("beginNo", totalRecord - (page -1 );
+		model.addAttribute("totalRecord", totalRecord);
+>>>>>>> main
 		
 		
 		
