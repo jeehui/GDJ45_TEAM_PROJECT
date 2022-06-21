@@ -2,6 +2,7 @@ package com.tp.yogioteur.service;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.ui.Model;
@@ -22,6 +23,8 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 =======
 >>>>>>> sungjae
+=======
+>>>>>>> c59662fb02f93b207bba363601958b80bf9b2233
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -55,5 +58,4 @@ public class RoomServiceImpl implements RoomService {
 				
 				
 	}
->>>>>>> sungjae
 }
