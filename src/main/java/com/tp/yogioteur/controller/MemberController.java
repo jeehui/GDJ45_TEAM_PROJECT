@@ -13,16 +13,26 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+<<<<<<< HEAD
 import com.tp.yogioteur.domain.MemberDTO;
+=======
+>>>>>>> db4877f19f2f7dd3c0f3035a5735a68af3cfb035
 import com.tp.yogioteur.service.MemberService;
 
 @Controller
 public class MemberController {
+<<<<<<< HEAD
 
 	@Autowired
 	private MemberService memberService;
 	
 	// 회원가입
+=======
+	
+	@Autowired
+	private MemberService memberService;
+	
+>>>>>>> db4877f19f2f7dd3c0f3035a5735a68af3cfb035
 	@GetMapping("/member/agreePage")
 	public String agreePage() {
 		return "member/agree";
@@ -58,14 +68,27 @@ public class MemberController {
 		memberService.signIn(request, response);
 	}
 	
+<<<<<<< HEAD
 
 	
 	// 로그인
+=======
+	
+	
+	
+	
+	
+	
+	
+	
+	
+>>>>>>> db4877f19f2f7dd3c0f3035a5735a68af3cfb035
 	@GetMapping("/member/loginPage")
 	public String loginPage() {
 		return "member/login";
 	}
 	
+<<<<<<< HEAD
 	@PostMapping("/member/login")
 	public void login(HttpServletRequest request, Model model) {
 		
@@ -80,4 +103,6 @@ public class MemberController {
 	
 	
 	
+=======
+>>>>>>> db4877f19f2f7dd3c0f3035a5735a68af3cfb035
 }

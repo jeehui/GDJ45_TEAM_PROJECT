@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> db4877f19f2f7dd3c0f3035a5735a68af3cfb035
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
@@ -26,7 +30,11 @@
 	
 	let idPass = false;
 	function fnLogin(){
+<<<<<<< HEAD
 		$('#Loginform').on('submit', function(e){
+=======
+		$('#LoginForm').on('submit', function(e){
+>>>>>>> db4877f19f2f7dd3c0f3035a5735a68af3cfb035
 			if($('#memberId').val() == '' || $('#memberPw').val() == ''){
 				$('#memberId').text('아이디와 비밀번호를 모두 입력하세요.').addClass('dont').removeClass('ok');
 				e.preventDefault();
@@ -35,8 +43,11 @@
 			
 		}) 
 	}
+<<<<<<< HEAD
 	
 
+=======
+>>>>>>> db4877f19f2f7dd3c0f3035a5735a68af3cfb035
 </script>
 </head>
 <body>
