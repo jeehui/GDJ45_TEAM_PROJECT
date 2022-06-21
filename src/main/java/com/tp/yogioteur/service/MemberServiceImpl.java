@@ -19,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tp.yogioteur.domain.MemberDTO;
+import com.tp.yogioteur.domain.SignOutMemberDTO;
 import com.tp.yogioteur.mapper.MemberMapper;
 import com.tp.yogioteur.util.SecurityUtils;
 
@@ -29,16 +30,16 @@ public class MemberServiceImpl implements MemberService {
 	private MemberMapper memberMapper;
 	
 	@Override
-	public Map<String, Object> idCheck(String id) {
+	public Map<String, Object> idCheck(String memberId) {
 		Map<String, Object> map = new HashMap<>();
-		map.put("res", memberMapper.selectMemberById(id));
+		map.put("res", memberMapper.selectMemberById(memberId));
 		return map;
 	}
 	
 	
 	// 인증코드 발송
 	@Override
-	public Map<String, Object> sendAuthCode(String email) {
+	public Map<String, Object> sendAuthCode(String memberEmail) {
 		String authCode = SecurityUtils.authCode(6);  
 		System.out.println(authCode);
 		
@@ -66,7 +67,7 @@ public class MemberServiceImpl implements MemberService {
 			
 			message.setHeader("Content-Type", "text/plain; charset=UTF-8");
 			message.setFrom(new InternetAddress(USERNAME, "인증코드관리자"));
-			message.setRecipient(Message.RecipientType.TO, new InternetAddress(email));
+			message.setRecipient(Message.RecipientType.TO, new InternetAddress(memberEmail));
 			message.setSubject("인증 요청 메일입니다.");
 			message.setText("인증번호는 " + authCode + "입니다.");
 			
@@ -82,21 +83,21 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	@Override
-	public Map<String, Object> emailCheck(String email) {
+	public Map<String, Object> emailCheck(String memberEmail) {
 		
 		Map<String, Object> map = new HashMap<>();
-		map.put("res", memberMapper.selectMemberByEmail(email));
+		map.put("res", memberMapper.selectMemberByEmail(memberEmail));
 		return map;
 	}
 	
 	@Override
 	public void signIn(HttpServletRequest request, HttpServletResponse response) {
-		String id = SecurityUtils.xss(request.getParameter("id"));        
-		String pw = SecurityUtils.sha256(request.getParameter("pw"));    
-		String name = SecurityUtils.xss(request.getParameter("name"));   
-		Integer phone = Integer.parseInt(request.getParameter("phone"));    
-		Integer birth = Integer.parseInt(request.getParameter("birth"));   
-		String email = SecurityUtils.xss(request.getParameter("email")); 
+		String memberId = SecurityUtils.xss(request.getParameter("memberId"));        
+		String memberPw = SecurityUtils.sha256(request.getParameter("memberPw"));    
+		String memberName = SecurityUtils.xss(request.getParameter("memberName"));   
+		String memberPhone =request.getParameter("memberPhone");    
+		Integer memberBirth = Integer.parseInt(request.getParameter("memberBirth"));   
+		String memberEmail = SecurityUtils.xss(request.getParameter("memberEmail")); 
 		String info = request.getParameter("info");
 		String event = request.getParameter("event");
 		int agreeState = 1;  
@@ -110,12 +111,12 @@ public class MemberServiceImpl implements MemberService {
 
 		
 		MemberDTO member = MemberDTO.builder()
-				.memberId(id)
-				.memberPw(pw)
-				.memberName(name)
-				.memberPhone(phone)
-				.memberBirth(birth)
-				.memberEmail(email)
+				.memberId(memberId)
+				.memberPw(memberPw)
+				.memberName(memberName)
+				.memberPhone(memberPhone)
+				.memberBirth(memberBirth)
+				.memberEmail(memberEmail)
 				.agreeState(agreeState)
 				.build();
 
@@ -126,7 +127,7 @@ public class MemberServiceImpl implements MemberService {
 			PrintWriter out = response.getWriter();
 			if(res == 1) {
 				out.println("<script>");
-				out.println("alert('회원 가입되었습니다.')");
+				out.println("alert('회원 가입이 완료되었습니다.')");
 				out.println("location.href='" + request.getContextPath() + "'");
 				out.println("</script>");
 				out.close();
@@ -143,4 +144,28 @@ public class MemberServiceImpl implements MemberService {
 		
 	}
 	
+	
+	@Override
+	public MemberDTO login(HttpServletRequest request) {
+		
+		String memberId = request.getParameter("memberId");
+		String memberPw = request.getParameter("memberPw");
+		
+		MemberDTO member = new MemberDTO();
+		member.setMemberId(memberId);
+		member.setMemberPw(memberPw);
+		
+		MemberDTO loginMember= memberMapper.selectMemberByIdPw(member);
+		
+		if(loginMember != null) {
+			memberMapper.insertMemberLog(memberId);
+		}
+		return loginMember;
+	}
+	
+	
+	@Override
+	public SignOutMemberDTO findSignOutMember(String memberId) {
+		return memberMapper.selectSignOutMemberByMemberId(memberId);
+	}
 }

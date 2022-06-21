@@ -6,22 +6,50 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.tp.yogioteur.mapper.MemberMapper">
 
 	<select id="selectMemberById" parameterType="String" resultType="MemberDTO">
-	SELECT MEMBER_NO, MEMBER_ID, MEMBER_PW, MEMBER_EMAIL, MEMBER_NAME, MEMBER_PHONE, AGREE_STATE, MEMBER_DATE, MEMBER_SESSIONID, MEMBER_BIRTH
+	SELECT MEMBER_NO, MEMBER_ID, MEMBER_PW, MEMBER_EMAIL, MEMBER_NAME, MEMBER_PHONE, MEMBER_BIRTH, AGREE_STATE, SIGN_IN, MEMBER_SESSIONID
 		  FROM MEMBER
 	 WHERE MEMBER_ID = #{memberId}	
 	</select>
 	
 	<select id="selectMemberByEmail" parameterType="String" resultType="MemberDTO">
-	SELECT MEMBER_NO, MEMBER_ID, MEMBER_PW, MEMBER_EMAIL, MEMBER_NAME, MEMBER_PHONE, AGREE_STATE, MEMBER_DATE, MEMBER_SESSIONID, MEMBER_BIRTH
+	SELECT MEMBER_NO, MEMBER_ID, MEMBER_PW, MEMBER_EMAIL, MEMBER_NAME, MEMBER_PHONE, MEMBER_BIRTH, AGREE_STATE, SIGN_IN, MEMBER_SESSIONID
 		  FROM MEMBER
 	 WHERE MEMBER_EMAIL = #{memberEmail}	
 	</select>
 	
 	<insert id="insertMember" parameterType="MemberDTO">
 	INSERT INTO MEMBER
-			(MEMBER_NO, MEMBER_ID, MEMBER_PW, MEMBER_EMAIL, MEMBER_NAME, MEMBER_PHONE, AGREE_STATE, MEMBER_DATE, MEMBER_BIRTH)
+			(MEMBER_NO, MEMBER_ID, MEMBER_PW, MEMBER_EMAIL, MEMBER_NAME, MEMBER_PHONE, MEMBER_BIRTH, AGREE_STATE, SIGN_IN)
 		VALUES
-			(MEMBER_SEQ.NEXTVAL, #{memberId}, #{memberPw}, #{memberEmail}, #{memberName}, #{memberPhone}, #{agreeState}, SYSDATE, #{memberBirth})
+			(MEMBER_SEQ.NEXTVAL, #{memberId}, #{memberPw}, #{memberEmail}, #{memberName}, #{memberPhone}, #{memberBirth}, #{agreeState}, SYSDATE)
 	</insert>
+	
+	
+	
+	
+	<select id="selectMemberByIdPw" parameterType="MemberDTO" resultType="MemberDTO">
+	SELECT MEMBER_NO, MEMBER_ID, MEMBER_PW, MEMBER_EMAIL, MEMBER_NAME, MEMBER_PHONE, MEMBER_BIRTH, AGREE_STATE, SIGN_IN, MEMBER_SESSIONID
+		FROM MEMBER
+	 WHERE MEMBER_ID = #{memberId}
+	 	AND MEMBER_PW = #{memberPw}
+	</select>
+	
+	<insert id="insertMemberLog" parameterType="String">
+	INSERT INTO MEMBER_LOG
+		(MEMBER_LOG_NO, MEMBER_ID, SIGN_UP)
+	 VALUES
+	 	(MEMBER_LOG_SEQ.NEXTVAL, #{memberId}, TO_DATE(SYSDATE, 'yyyy-mm-dd hh24:mi:ss'))
+	</insert>
+	
+	<select id="selectSignOutMemberByMemberId" parameterType="String" resultType="SignOutMemberDTO">
+	SELECT SIGN_OUT_NO, MEMBER_NO, ID, NAME, EMAIL, AGREE_STATE, SIGN_IN, SIGN_OUT
+		FROM SIGN_OUT_MEMBER
+	 WHERE ID = #{memberId}
+	</select>
+	
+	
+	
+	
+	
 	
 </mapper>

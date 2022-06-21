@@ -19,7 +19,7 @@ public class SignOutMemberDTO {
 	private String name;
 	private String email;
 	private Integer agreeState;
-	private Date signOut;
 	private Date signIn;
+	private Date signOut;
 
 }

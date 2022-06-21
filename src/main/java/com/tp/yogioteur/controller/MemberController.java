@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.tp.yogioteur.domain.MemberDTO;
 import com.tp.yogioteur.service.MemberService;
 
 @Controller
@@ -21,13 +22,12 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 	
-	// 약관동의 페이지
+	// 회원가입
 	@GetMapping("/member/agreePage")
 	public String agreePage() {
 		return "member/agree";
 	}
 	
-	// 회원가입(정보입력) 페이지
 	@GetMapping("/member/signInPage")
 	public String signInPage(@RequestParam(required=false) String[] agreements, Model model) {
 		model.addAttribute("agreements", agreements);
@@ -36,21 +36,21 @@ public class MemberController {
 	
 	@ResponseBody
 	@GetMapping(value="/member/idCheck", produces="application/json")
-	public Map<String, Object> idCheck(@RequestParam String id) {
-		return memberService.idCheck(id);
+	public Map<String, Object> idCheck(@RequestParam String memberId) {
+		return memberService.idCheck(memberId);
 	}
 	
 	
 	@ResponseBody
 	@GetMapping(value="/member/sendAuthCode", produces="application/json")
-	public Map<String, Object> sendAuthCode(@RequestParam String email){
-		return memberService.sendAuthCode(email);
+	public Map<String, Object> sendAuthCode(@RequestParam String memberEmail){
+		return memberService.sendAuthCode(memberEmail);
 	}
 	
 	@ResponseBody
 	@GetMapping(value="/member/emailCheck", produces="application/json")
-	public Map<String, Object> emailCheck(@RequestParam String email){
-		return memberService.emailCheck(email);
+	public Map<String, Object> emailCheck(@RequestParam String memberEmail){
+		return memberService.emailCheck(memberEmail);
 	}
 
 	@PostMapping("/member/signIn")
@@ -58,18 +58,26 @@ public class MemberController {
 		memberService.signIn(request, response);
 	}
 	
+
 	
-	
-	
-	
-	
-	
-	
-	
-	
+	// 로그인
 	@GetMapping("/member/loginPage")
 	public String loginPage() {
 		return "member/login";
 	}
+	
+	@PostMapping("/member/login")
+	public void login(HttpServletRequest request, Model model) {
+		
+		MemberDTO loginMember = memberService.login(request);
+		
+		if(loginMember != null) {
+			model.addAttribute("loginMember", loginMember);
+		}
+	}
+	
+	
+	
+	
 	
 }

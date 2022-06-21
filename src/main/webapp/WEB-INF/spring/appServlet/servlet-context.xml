@@ -23,6 +23,16 @@
 	
 	<context:component-scan base-package="com.tp.yogioteur" />
 	
+	<beans:bean class="com.tp.yogioteur.interceptor.LoginInterceptor" id="LoginInterceptor"></beans:bean>
+	
+	<interceptors>
+		<interceptor>
+			<mapping path="/member/login"/>
+			<beans:ref bean="LoginInterceptor"/>
+		</interceptor>
+	</interceptors>
+	
+	
 	
 	
 </beans:beans>
