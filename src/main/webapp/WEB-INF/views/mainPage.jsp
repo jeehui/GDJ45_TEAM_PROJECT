@@ -12,7 +12,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Charis+SIL:wght@700&family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 <script src="https://kit.fontawesome.com/148c1051b1.js" crossorigin="anonymous"></script>
-<script src="../resources/js/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
@@ -168,17 +167,19 @@
 	
 	//페이지 로드 이벤트
 	
-	$(document).ready(function(){
+	$(function(){
 		
 		
 		 $("#checkIn").datepicker({
-			 dateFormat: 'yymmdd'
+			 dateFormat: 'yy/mm/dd'
 		    });
 		    
 		 $("#checkOut").datepicker({
-			 dateFormat: 'yymmdd'
+			 dateFormat: 'yy/mm/dd'
 		    });
-		
+		 
+		 fnDate();
+		 
 		//폼의 서브밋 이벤트
 		$('#f').on('submit', (ev)=>{
 			
@@ -195,11 +196,17 @@
 	
   //함수
   
+   function fnDate(){
+		
+		 $('#checkIn').datepicker('option', 'minDate','0');//오늘이후 선택가능
+		  $('#checkOut').datepicker('option', 'minDate','0');//오늘이후 선택가능
+		
+	} 
+  
   
 </script>
 <body>
 	<div class="head">
-	<jsp:include page="./layout/header.jsp"></jsp:include>
 	
 		<div class="header">
 				<a href="${contextPath}/review/reviewPage">REVIEW</a>
