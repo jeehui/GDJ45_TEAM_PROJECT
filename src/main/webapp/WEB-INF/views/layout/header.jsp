@@ -9,12 +9,69 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+		text-decoration: none;
+		color: white;
+	}
+	
+	.head{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: silver;
+		padding: 8px 12px;
+	}
+	
+	.header a{
+		padding: 12px;
+		display: inline-block;
+		font-size: 18px;
+	}
+	
+	.header a:hover {
+		
+		color: #999;
+		
+	}
+	
+		
+	.title a{
+		font-size: 22px;
+	}
+	
+	.header2 a{
+		padding: 12px;
+		display: inline-block;
+		font-size: 18px;
+	}
+	
+	.header2 a:hover {
+		
+		color: #999;
+		
+	}
+</style>
 </head>
 <body>
 
-	<a href ="${contextPath}/member/loginPage">로그인</a>
-	<a href ="${contextPath}/member/signInPage">회원가입</a>
+	<div class="head">
+	
+		<div class="header">
+				<a href="${contextPath}/review/reviewPage">REVIEW</a>
+				<a href="${contextPath}/faq/faqPage">FAQ</a>
+		</div>
+		
+		<div class="title">
+			<a href="${contextPath}/mainPage">YOGIOTEUR</a>
+		</div>
+		 
+		<div class="header2">
+				<a href="${contextPath}/login/loginPage" >로그인</a>
+				<a href="${contextPath}/signUp/signUpPage" >회원가입</a>
+		</div>
+		
+		
+		
+	</div>
 
-
-</body>
-</html>
+<section>
