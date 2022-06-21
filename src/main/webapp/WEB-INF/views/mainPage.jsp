@@ -198,8 +198,8 @@
   
 </script>
 <body>
-	
 	<div class="head">
+	<jsp:include page="./layout/header.jsp"></jsp:include>
 	
 		<div class="header">
 				<a href="${contextPath}/review/reviewPage">REVIEW</a>
@@ -244,10 +244,11 @@
 		
 		<div class="weather_api">
 		
-			api
-		
+			
 		</div>
 	</div>
+
+	
 </body>
 
 <footer>

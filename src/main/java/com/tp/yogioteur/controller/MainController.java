@@ -26,6 +26,20 @@ public class MainController {
 	public String list(HttpServletRequest request, Model model) {
 		roomService.reservationRoom(request, model);
 		return "room/roomList";
+	@GetMapping("/member/loginPage")
+	public String loginPage() {
+		return "member/login";
+	}
+	
+	@GetMapping("/member/signInPage")
+	public String signInPage() {
+		return "member/signIn";
+	}
+	
+	
+	@PostMapping("/member/login")
+	public void login() {
+		
 	}
 	
 }
