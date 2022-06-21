@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -21,8 +22,17 @@ public class ReservationController {
 		return "reservation/reservationPage";
 	}
 	
+	@GetMapping("reservation/reservationConfirm")
+	public String reservationConfirm(HttpServletRequest request, Model model) {
+		reservationService.confirms(request, model);
+		return "reservation/reservationConfirm";
+	}
+	
 	@PostMapping("/payments")
 	public void payments(HttpServletRequest request, HttpServletResponse response) {
+		
 		reservationService.payments(request, response);
 	}
+	
+	
 }

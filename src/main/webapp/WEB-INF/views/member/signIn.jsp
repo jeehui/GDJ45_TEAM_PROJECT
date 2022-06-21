@@ -9,6 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<<<<<<< HEAD
 <style>
 	.ok {
 		color: blue;
@@ -288,6 +289,13 @@
 		<button>회원가입</button>
 		<input type="button" value="취소하기" onclick="location.href='${contextPath}'"> 
 	</form>
+=======
+</head>
+<body>
+
+	<jsp:include page="../layout/header.jsp"></jsp:include>
+<H1>회원가입</H1>
+>>>>>>> c59662fb02f93b207bba363601958b80bf9b2233
 
 </body>
 </html>
