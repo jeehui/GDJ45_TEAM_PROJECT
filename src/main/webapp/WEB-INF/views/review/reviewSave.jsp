@@ -57,7 +57,6 @@
   		<textarea rows="10" cols="50" class="review_textarea" placeholder="리뷰 내용"></textarea><br>
    		
    		<fieldset>
-	        <legend>이모지 별점</legend>
 	        <input type="radio" name="rating" value="1" id="rate1"><label for="rate1">★</label>
 	        <input type="radio" name="rating" value="2" id="rate2"><label for="rate2">★</label>
 	        <input type="radio" name="rating" value="3" id="rate3"><label for="rate3">★</label>
