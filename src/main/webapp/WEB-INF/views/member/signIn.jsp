@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -13,7 +13,7 @@
 <body>
 
 	<jsp:include page="../layout/header.jsp"></jsp:include>
-<H1>회원가입</H1>
+	<H1>회원가입</H1>
 
 </body>
-</html>
+</html> --%>

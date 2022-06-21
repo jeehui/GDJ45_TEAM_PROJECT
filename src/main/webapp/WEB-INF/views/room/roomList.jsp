@@ -13,7 +13,7 @@
 </script>
 </head>
 <body>
-
-
+	<h1>방조회</h1>
+	
 </body>
 </html>
