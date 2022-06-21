@@ -17,4 +17,6 @@ public interface MemberMapper {
 	public int insertMemberLog(String memberId);
 
 	public SignOutMemberDTO selectSignOutMemberByMemberId(String memberId);
+	
+	public MemberDTO findMemberByNameEmail(MemberDTO member);
 }

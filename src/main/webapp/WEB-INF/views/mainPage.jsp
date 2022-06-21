@@ -13,16 +13,19 @@
 </script>
 </head>
 <body>
-	
-	<!-- 로그인 이전 -->
-	<a href ="${contextPath}/member/loginPage">로그인</a>
-	<a href ="${contextPath}/member/agreePage">회원가입</a>	
 
+	<!-- 로그인 이전 -->
+		<a href ="${contextPath}/member/loginPage">로그인</a>
+		<a href ="${contextPath}/member/agreePage">회원가입</a>		
 
 	<!-- 로그인 이후 -->
-
+		<a href ="${contextPath}/member/logioutPage">로그아웃</a>
+		<a href ="${contextPath}/member/memberPage">마이페이지</a>		
+	
 	
 	<h1>MAIN PAGE</h1>
+	
+	
 
 </body>
 </html>

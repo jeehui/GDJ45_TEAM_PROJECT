@@ -28,8 +28,7 @@
 	function fnLogin(){
 		$('#LoginForm').on('submit', function(e){
 			if($('#memberId').val() == '' || $('#memberPw').val() == ''){
-				$('#idMsg').text('아이디를 확인해주세요.').addClass('dont').removeClass('ok');
-				$('#pwMsg').text('비밀번호를 확인해주세요.').addClass('dont').removeClass('ok');
+				alert('아이디와 비밀번호를 입력하세요.');
 				e.preventDefault();
 				return false;
 			}
@@ -43,10 +42,11 @@
 
 	<h1>로그인</h1>
 	<form id="Loginform" action="${contextPath}/member/login" method="post">
+		
+		<input type="hidden" name="url" value="${url}">
+		
 		<input type="text" id="memberId" name="memberId" placeholder="아이디"><br>
-		<span id="idMsg"></span>
 		<input type="password" id="memberPw" name="memberPw" placeholder="비밀번호">
-		<span id="pwMsg"></span>
 		<button>로그인</button><br>
 		
 		<label>

@@ -95,10 +95,7 @@ public class MemberServiceImpl implements MemberService {
 		String memberId = SecurityUtils.xss(request.getParameter("memberId"));        
 		String memberPw = SecurityUtils.sha256(request.getParameter("memberPw"));    
 		String memberName = SecurityUtils.xss(request.getParameter("memberName"));   
-
 		String memberPhone =request.getParameter("memberPhone");    
-
-
 		Integer memberBirth = Integer.parseInt(request.getParameter("memberBirth"));   
 		String memberEmail = SecurityUtils.xss(request.getParameter("memberEmail")); 
 		String info = request.getParameter("info");
@@ -155,16 +152,15 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public MemberDTO login(HttpServletRequest request) {
-		
-		String memberId = request.getParameter("memberId");
-		String memberPw = request.getParameter("memberPw");
+		// 회원가입시 들어간 값과 같기 위해서는 login에도 암호화를 똑같이 해줘야한다.
+		String memberId = SecurityUtils.xss(request.getParameter("memberId"));        
+		String memberPw = SecurityUtils.sha256(request.getParameter("memberPw"));
 		
 		MemberDTO member = new MemberDTO();
 		member.setMemberId(memberId);
 		member.setMemberPw(memberPw);
 		
 		MemberDTO loginMember= memberMapper.selectMemberByIdPw(member);
-		
 		if(loginMember != null) {
 			memberMapper.insertMemberLog(memberId);
 		}
@@ -175,6 +171,13 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public SignOutMemberDTO findSignOutMember(String memberId) {
 		return memberMapper.selectSignOutMemberByMemberId(memberId);
+	}
+	
+	@Override
+	public Map<String, Object> findId(MemberDTO member) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("findMember", memberMapper.findMemberByNameEmail(member));
+		return map;
 	}
 
 }

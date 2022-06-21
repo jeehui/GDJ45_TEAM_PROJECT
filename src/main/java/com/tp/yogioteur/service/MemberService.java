@@ -17,6 +17,11 @@ public interface MemberService {
 	
 	// 로그인
 	public MemberDTO login(HttpServletRequest request);
+	
+	// 탈퇴
 	public SignOutMemberDTO findSignOutMember(String memberId);
 	
+	
+	// 아이디 찾기
+	public Map<String, Object> findId(MemberDTO member);
 }

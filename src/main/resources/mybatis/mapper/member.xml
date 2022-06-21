@@ -4,6 +4,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <mapper namespace="com.tp.yogioteur.mapper.MemberMapper">
+	<!-- 회원가입 --> 
 	<select id="selectMemberById" parameterType="String" resultType="MemberDTO">
 	SELECT MEMBER_NO, MEMBER_ID, MEMBER_PW, MEMBER_EMAIL, MEMBER_NAME, MEMBER_PHONE, MEMBER_BIRTH, AGREE_STATE, SIGN_IN, MEMBER_SESSIONID
 		  FROM MEMBER
@@ -24,6 +25,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	
 	
+	
+	<!-- 로그인 -->
 	<select id="selectMemberByIdPw" parameterType="MemberDTO" resultType="MemberDTO">
 	SELECT MEMBER_NO, MEMBER_ID, MEMBER_PW, MEMBER_EMAIL, MEMBER_NAME, MEMBER_PHONE, MEMBER_BIRTH, AGREE_STATE, SIGN_IN, MEMBER_SESSIONID
 		FROM MEMBER
@@ -38,12 +41,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	 	(MEMBER_LOG_SEQ.NEXTVAL, #{memberId}, TO_DATE(SYSDATE, 'yyyy-mm-dd hh24:mi:ss'))
 	</insert>
 	
+	<!-- 탈퇴 -->
 	<select id="selectSignOutMemberByMemberId" parameterType="String" resultType="SignOutMemberDTO">
 	SELECT SIGN_OUT_NO, MEMBER_NO, ID, NAME, EMAIL, AGREE_STATE, SIGN_IN, SIGN_OUT
 		FROM SIGN_OUT_MEMBER
 	 WHERE ID = #{memberId}
 	</select>
 	
-	
+	<!-- 아이디찾기 -->
+	<select id="findMemberByNameEmail" parameterType="MemberDTO" resultType="MemberDTO">
+	SELECT MEMBER_NO, MEMBER_ID, MEMBER_PW, MEMBER_EMAIL, MEMBER_NAME, MEMBER_PHONE, MEMBER_BIRTH, AGREE_STATE, SIGN_IN, MEMBER_SESSIONID
+		  FROM MEMBER
+	  WHERE MEMBER_NAME = #{memberName}	
+	   AND MEMBER_EMAIL = #{memberEmail}
+	</select>
 	
 </mapper>

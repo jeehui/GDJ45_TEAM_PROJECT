@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -61,9 +62,10 @@ public class MemberController {
 
 	
 	// 로그인
-	
 	@GetMapping("/member/loginPage")
-	public String loginPage() {
+	public String loginPage(@RequestParam(required = false) String url, Model model) {
+		model.addAttribute("url", url);
+		System.out.println(url);
 		return "member/login";
 	}
 	
@@ -71,14 +73,22 @@ public class MemberController {
 	public void login(HttpServletRequest request, Model model) {
 		
 		MemberDTO loginMember = memberService.login(request);
-		
 		if(loginMember != null) {
 			model.addAttribute("loginMember", loginMember);
 		}
+		model.addAttribute("url", request.getParameter("url"));
 	}
 	
 	
+	// 아이디찾기
+	@GetMapping("/member/findIdPage")
+	public String findPage() {
+		return "member/findId";
+	}
 	
-	
-	
+	@ResponseBody
+	@PostMapping(value="/member/findId", produces="application/json")
+	public Map<String, Object> findId(@RequestBody MemberDTO member){
+		return memberService.findId(member);
+	}
 }
