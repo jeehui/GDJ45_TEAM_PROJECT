@@ -15,17 +15,24 @@
 <body>
 
 	<!-- 로그인 이전 -->
+	<c:if test="${loginMember eq null}">
 		<a href ="${contextPath}/member/loginPage">로그인</a>
-		<a href ="${contextPath}/member/agreePage">회원가입</a>		
+		<a href ="${contextPath}/member/agreePage">회원가입</a>			
+	</c:if>
 
 	<!-- 로그인 이후 -->
-		<a href ="${contextPath}/member/logioutPage">로그아웃</a>
+	<c:if test="${loginMember ne null}">
+		${loginMember.memberId}
+		<a href ="${contextPath}/member/logout">로그아웃</a>
 		<a href ="${contextPath}/member/memberPage">마이페이지</a>		
 	
+	</c:if>
 	
 	<h1>MAIN PAGE</h1>
 	
-	
+	<!-- 테스트 -->
+	<a href="${contextPath}/board/reviewPage">리뷰작성</a>
+	<a href="${contextPath}/reservation/reservationPage">예약</a>
 
 </body>
 </html>

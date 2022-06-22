@@ -5,6 +5,9 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
+
 import com.tp.yogioteur.domain.MemberDTO;
 import com.tp.yogioteur.domain.SignOutMemberDTO;
 
@@ -18,10 +21,13 @@ public interface MemberService {
 	// 로그인
 	public MemberDTO login(HttpServletRequest request);
 	
-	// 탈퇴
-	public SignOutMemberDTO findSignOutMember(String memberId);
-	
-	
 	// 아이디 찾기
-	public Map<String, Object> findId(MemberDTO member);
+	public MemberDTO findId(HttpServletRequest request);
+	
+	// 비밀번호 찾기
+	public Map<String, Object> idEmailCheck(MemberDTO member);
+	public void changePw(HttpServletRequest request, HttpServletResponse response);
+	
+	// 탈퇴
+//	public SignOutMemberDTO findSignOutMember(String memberId);
 }

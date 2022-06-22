@@ -16,7 +16,12 @@ public interface MemberMapper {
 	public MemberDTO selectMemberByIdPw(MemberDTO member);
 	public int insertMemberLog(String memberId);
 
-	public SignOutMemberDTO selectSignOutMemberByMemberId(String memberId);
-	
 	public MemberDTO findMemberByNameEmail(MemberDTO member);
+	
+	public MemberDTO selectMemberByIdEmail(MemberDTO member);
+	public int updatePw(MemberDTO member);
+	
+//	public SignOutMemberDTO selectSignOutMemberByMemberId(String memberId);
+	
+	
 }

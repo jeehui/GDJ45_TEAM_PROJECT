@@ -17,6 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.tp.yogioteur.domain.MemberDTO;
 import com.tp.yogioteur.domain.SignOutMemberDTO;
@@ -108,7 +110,6 @@ public class MemberServiceImpl implements MemberService {
 		} else if(info.isEmpty() && event.equals("event")) {
 			agreeState = 3;  
 		}
-
 		
 		MemberDTO member = MemberDTO.builder()
 				.memberId(memberId)
@@ -127,11 +128,7 @@ public class MemberServiceImpl implements MemberService {
 			PrintWriter out = response.getWriter();
 			if(res == 1) {
 				out.println("<script>");
-
 				out.println("alert('회원 가입이 완료되었습니다.')");
-
-				out.println("alert('회원 가입되었습니다.')");
-
 				out.println("location.href='" + request.getContextPath() + "'");
 				out.println("</script>");
 				out.close();
@@ -167,17 +164,69 @@ public class MemberServiceImpl implements MemberService {
 		return loginMember;
 	}
 	
+
 	
+	// 아이디찾기
 	@Override
-	public SignOutMemberDTO findSignOutMember(String memberId) {
-		return memberMapper.selectSignOutMemberByMemberId(memberId);
-	}
-	
-	@Override
-	public Map<String, Object> findId(MemberDTO member) {
-		Map<String, Object> map = new HashMap<>();
-		map.put("findMember", memberMapper.findMemberByNameEmail(member));
-		return map;
+	public MemberDTO findId(HttpServletRequest request) {
+		
+		String memberName = request.getParameter("memberName");
+		String memberEmail = request.getParameter("memberEmail");
+		MemberDTO member = MemberDTO.builder()
+				.memberName(memberName)
+				.memberEmail(memberEmail)
+				.build();
+		MemberDTO confirmMember = memberMapper.findMemberByNameEmail(member);
+		
+		return confirmMember;
 	}
 
+	
+	@Override
+	public Map<String, Object> idEmailCheck(MemberDTO member) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("findMember", memberMapper.selectMemberByIdEmail(member));
+		return map;
+	}
+	
+	@Override
+	public void changePw(HttpServletRequest request, HttpServletResponse response) {
+		String memberId = request.getParameter("memberId");
+		String memberPw = SecurityUtils.sha256(request.getParameter("memberPw"));
+		
+		MemberDTO member = MemberDTO.builder()
+				.memberId(memberId)
+				.memberPw(memberPw)
+				.build();
+		
+		int res = memberMapper.updatePw(member);
+		
+		try {
+			response.setContentType("text/html");
+			PrintWriter out = response.getWriter();
+			if(res == 1) {
+				out.println("<script>");
+				out.println("alert('비밀번호가 수정되었습니다.')");
+				out.println("location.href='" + request.getContextPath() + "/member/loginPage'");
+				out.println("</script>");
+				out.close();
+			} else {
+				out.println("<script>");
+				out.println("alert('비밀번호가 수정되지 않았습니다.')");
+				out.println("history.back()");
+				out.println("</script>");
+				out.close();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+//	@Override
+//	public SignOutMemberDTO findSignOutMember(String memberId) {
+//		return memberMapper.selectSignOutMemberByMemberId(memberId);
+//	}
+//	
+	
 }

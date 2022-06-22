@@ -4,13 +4,13 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -65,7 +65,6 @@ public class MemberController {
 	@GetMapping("/member/loginPage")
 	public String loginPage(@RequestParam(required = false) String url, Model model) {
 		model.addAttribute("url", url);
-		System.out.println(url);
 		return "member/login";
 	}
 	
@@ -79,16 +78,53 @@ public class MemberController {
 		model.addAttribute("url", request.getParameter("url"));
 	}
 	
+	// 로그아웃
+	@GetMapping("/member/logout")
+	public String logout(HttpSession session, HttpServletResponse response) { 
+
+		MemberDTO loginMember = (MemberDTO) session.getAttribute("loginMember");	
+		if (loginMember != null) {
+				session.invalidate(); 
+			}
+		return "redirect:/";
+	}
+	
 	
 	// 아이디찾기
 	@GetMapping("/member/findIdPage")
-	public String findPage() {
+	public String findIdPage() {
 		return "member/findId";
 	}
 	
+	@PostMapping("/member/findId")
+	public String findId(HttpServletRequest request, Model model) {
+		model.addAttribute("memberConfirm", memberService.findId(request));
+		return "member/findIdResult";
+	}
+	
+
+	
+	// 비밀번호찾기
+	@GetMapping("/member/findPwPage")
+	public String findPwPage() {
+		return "member/findPw";
+	}
+	
 	@ResponseBody
-	@PostMapping(value="/member/findId", produces="application/json")
-	public Map<String, Object> findId(@RequestBody MemberDTO member){
-		return memberService.findId(member);
+	@GetMapping("/member/idEmailCheck")
+	public Map<String, Object> idEmailCheck(MemberDTO member) {
+		return memberService.idEmailCheck(member);
+	}
+	
+	@ResponseBody
+	@PostMapping(value = "/member/findPw")
+	public void findPw(HttpServletRequest request, HttpServletResponse response){
+		memberService.changePw(request, response);
+	}
+	
+	// intercept 테스트 매핑
+	@GetMapping("/board/reviewPage")
+	public String reservationPage() {
+		return "board/review";
 	}
 }

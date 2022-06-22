@@ -30,12 +30,12 @@ public class LoginInterceptor implements HandlerInterceptor {
 		
 		String memberId = SecurityUtils.xss(request.getParameter("memberId"));
 		
-		SignOutMemberDTO SignOutMember = memberService.findSignOutMember(memberId);
-		if(SignOutMember != null) {
-			request.setAttribute("SignOutMember", SignOutMember);
-			request.getRequestDispatcher("/member/reSignInPage").forward(request, response);
-			return false;
-		}
+//		SignOutMemberDTO SignOutMember = memberService.findSignOutMember(memberId);
+//		if(SignOutMember != null) {
+//			request.setAttribute("SignOutMember", SignOutMember);
+//			request.getRequestDispatcher("/member/reSignInPage").forward(request, response);
+//			return false;
+//		}
 		return true;
 	}
 	
