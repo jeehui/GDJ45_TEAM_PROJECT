@@ -27,6 +27,13 @@
 		color: white;
 	}
 	
+	form{
+		
+		background: silver;
+		
+	
+	}
+	
 	.head{
 		display: flex;
 		justify-content: space-between;
@@ -64,27 +71,22 @@
 		
 	}
 	
-	.searchBar{
-		width: 70%;
-		height: 70px;
-		display: block;
-		align-items: center;
-		background-color: silver;
-		padding-left: 130px;
-	    padding-right: 105px;
-	    margin-left: 143px;
+	.background{
 		
+		height: 850px;
+	
 	}
 	
-	
-	 .searchBar{
+	.searchBar{
 		display: flex;
 		align-items: center;
+		background-color: silver;
+	    height: 80px;
 		font-size: 25px;
+		padding-left: 300px;
 		color: white;
-		padding-left: 160px;
 		
-	} 
+	}
 	
 	button {
 	  margin: 5px;
