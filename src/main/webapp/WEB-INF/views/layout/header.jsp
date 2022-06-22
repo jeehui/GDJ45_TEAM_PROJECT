@@ -10,8 +10,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-		text-decoration: none;
-		color: white;
+	body{
+		margin: 0;
+		font-family: 'Kdam Thmor Pro', sans-serif;
 	}
 	
 	.head{
@@ -62,12 +63,13 @@
 		</div>
 		
 		<div class="title">
-			<a href="${contextPath}/mainPage">YOGIOTEUR</a>
+			<a href="http://localhost:9090/yogioteur/">YOGIOTEUR</a>
 		</div>
 		 
 		<div class="header2">
 				<a href="${contextPath}/login/loginPage" >로그인</a>
 				<a href="${contextPath}/signUp/signUpPage" >회원가입</a>
+				<a href="${contextPath}/admin/index">관리자페이지</a>
 		</div>
 		
 		

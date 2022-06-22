@@ -159,7 +159,13 @@
 	  top: 2px;;
 	}
 	
-	
+	.weather_api{
+		
+		display: block;
+		width: 1300px;
+		height: 500px;
+		
+	}
 	
 </style>
 </head>
@@ -198,8 +204,8 @@
   
    function fnDate(){
 		
-		 $('#checkIn').datepicker('option', 'minDate','0');//오늘이후 선택가능
-		  $('#checkOut').datepicker('option', 'minDate','0');//오늘이후 선택가능
+		 $('#checkIn').datepicker('option', 'minDate','0');//오늘부터 선택가능
+		 $('#checkOut').datepicker('option', 'minDate','+1');//다음날부터 선택가능 특정날짜 키워드로 찾아보기
 		
 	} 
   
@@ -232,34 +238,17 @@
 		
 		</form>
 		
+	</div>
+	
 		<div class="weather_api">
 		
+			날씨별관광지 추천
 			
 		</div>
-	</div>
-
+		
+	<jsp:include page="layout/footer.jsp"></jsp:include>
 	
 </body>
 </section>
-<footer>
 
-	<div class="end_info">
-	
-		<div class="hotel_info"> 
-		
-			<div class="info">
-				
-			</div> 
-			
-		</div>
-			<ul class="sns_info">
-				<li><i class="fa-brands fa-facebook-square"></i></li>
-				<li><i class="fa-brands fa-twitter-square"></i></li>
-				<li><i class="fa-brands fa-instagram"></i></li>
-			</ul>
-				
-			<a href="${contextPath}/reservation/reservationPage">예약</a>
-	</div>
-
-</footer>
 </html>

@@ -14,9 +14,6 @@ public class RoomTypeDTO {
 	
 	private Long rtNo;
 	private String rtType;
-	private Long rtPrice;
-	private Long rtMax;
-	private Long rtArea;
-	
+	private Integer rtMax;
 	
 }
