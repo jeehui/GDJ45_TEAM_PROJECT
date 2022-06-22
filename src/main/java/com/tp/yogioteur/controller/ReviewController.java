@@ -27,15 +27,14 @@ public class ReviewController {
 	public String reviewSavePage() {
 		return"review/reviewSave";
 	}
-	
-	@PostMapping("/review/reviewSave")
-	public void reviewSave(MultipartHttpServletRequest multiparRequest, Model model) {
-		//reviewService.ReviewSave(multiparRequest, model);
-	}
-	
-	@GetMapping("/review/removeReview")
-	public void removeReview(HttpServletRequest request, HttpServletResponse response) {
-		//reviewService.removeReview(request, response);
-	}
+	/*
+	 * @PostMapping("/review/reviewSave") public void
+	 * reviewSave(MultipartHttpServletRequest multiparRequest, Model model) {
+	 * //reviewService.ReviewSave(multiparRequest, model); }
+	 * 
+	 * @GetMapping("/review/removeReview") public void
+	 * removeReview(HttpServletRequest request, HttpServletResponse response) {
+	 * //reviewService.removeReview(request, response); }
+	 */
 	
 }
