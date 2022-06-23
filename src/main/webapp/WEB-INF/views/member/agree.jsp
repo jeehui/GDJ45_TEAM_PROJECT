@@ -29,10 +29,9 @@
 	$(function(){
 		
 		$('#checkAll').on('click', function(){
-
+		
 			$('.checkOne').prop('checked', $('#checkAll').prop('checked'));		
-			
-
+																				
 			if($('#checkAll').is(':checked')){
 				$('.item, .items').addClass('check');
 			} else{
@@ -40,10 +39,10 @@
 			}
 		})
 		
-
+		
 		$('.checkOne').on('click', function(){
 			let checkAll = true;							
-			
+
 			$.each($('.checkOne'), function(i, checkOne){
 				if($(checkOne).is(':checked') == false){	
 					$('#checkAll').prop('checked', false);
@@ -58,13 +57,13 @@
 			}
 		})
 		
-
+		
 		$('.item, .items').on('click', function(){
-			$(this).toggleClass('check');	
+			$(this).toggleClass('check');		
 		})
 		
-
-		$('#f').on('submit', function(e){
+		
+		$('#agreeForm').on('submit', function(e){
 			if($('#service').is(':checked') == false || $('#privacy').is(':checked') == false){
 				alert('필수 약관에 모두 동의하세요.');
 				e.preventDefault();
@@ -81,7 +80,7 @@
 
 	<h3>약관 동의하기</h3>
 	
-	<form id="f" action="${contextPath}/member/signInPage">
+	<form id="agreeForm" action="${contextPath}/member/signInPage">
 		
 		<input type="checkbox" id="checkAll" class="blind checkAll">
 		<label for="checkAll" class="items">모두 동의합니다.</label>

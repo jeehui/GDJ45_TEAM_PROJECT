@@ -15,7 +15,10 @@ import com.tp.yogioteur.service.RoomServiceImpl;
 public class ServiceConfig {
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
+=======
+>>>>>>> jieun
 	@Bean
 	public MemberService memberService() {
 		return new MemberServiceImpl();

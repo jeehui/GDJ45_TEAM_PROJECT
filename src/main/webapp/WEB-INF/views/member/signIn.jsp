@@ -10,6 +10,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> jieun
 <style>
 	.ok {
 		color: blue;
@@ -31,7 +34,7 @@
 	})
 	// 가입
 	function fnSignIn(){
-		$('#form').on('submit', function(event){
+		$('#SignInform').on('submit', function(event){
 			if(idPass == false){
 				alert('아이디를 확인하세요.');
 				event.preventDefault();
@@ -64,13 +67,13 @@
 	// 생년월일 정규식
 	let birthPass = false;
 	function fnBirthCheck(){
-		$('#birth').on('keyup', function(){
-			let regBirth = /^([0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/;
-			if(regBirth.test($('#birth').val())==false){
-				$('#birthMsg').text('생년월일은 주민번호 앞자리만 입력해주세요.').addClass('dont').removeClass('ok');
+		$('#memberBirth').on('keyup', function(){
+			let regBirth = /^\d{6}$/;
+			if(regBirth.test($('#memberBirth').val())==false){
+				$('#memberBirthMsg').text('생년월일은 주민번호 앞자리만 입력해주세요.').addClass('dont').removeClass('ok');
 				birthPass = false;
 			} else {
-				$('#birthMsg').text('');
+				$('#memberBirthMsg').text('');
 				birthPass = true;
 			}
 		})
@@ -80,13 +83,13 @@
 	// 연락처 정규식
 	let phonePass = false;
 	function fnPhoneCheck(){
-		$('#phone').on('keyup', function(){
+		$('#memberPhone').on('keyup', function(){
 			let regPhone = /^[0-9]{1,11}$/;
-			if(regPhone.test($('#phone').val())==false){
-				$('#phoneMsg').text('전화번호는 -없이 숫자로만 입력해주세요.').addClass('dont').removeClass('ok');
+			if(regPhone.test($('#memberPhone').val())==false){
+				$('#memberPhoneMsg').text('전화번호는 -없이 숫자로만 입력해주세요.').addClass('dont').removeClass('ok');
 				phonePass = false;
 			} else {
-				$('#phoneMsg').text('');
+				$('#memberPhoneMsg').text('');
 				phonePass = true;
 			}
 		})
@@ -98,7 +101,7 @@
 		return new Promise(function(resolve, reject) {
 			// 정규식 
 			let regEmail = /^[a-zA-Z0-9-_]+@[a-zA-Z0-9]+(\.[a-zA-Z]{2,}){1,2}$/; 
-			if(regEmail.test($('#email').val())==false){
+			if(regEmail.test($('#memberEmail').val())==false){
 				reject(1000);      
 				return;
 			}
@@ -106,7 +109,7 @@
 			$.ajax({
 				url: '${contextPath}/member/emailCheck',
 				type: 'get',
-				data: 'email=' + $('#email').val(),
+				data: 'memberEmail=' + $('#memberEmail').val(),
 				dataType: 'json',
 				success: function(obj){
 					if(obj.res == null){
@@ -141,7 +144,7 @@
 					$.ajax({
 						url: '${contextPath}/member/sendAuthCode',
 						type: 'get',
-						data: 'email=' + $('#email').val(),
+						data: 'memberEmail=' + $('#memberEmail').val(),
 						dataType: 'json',
 						success: function(obj){  
 							alert('인증코드를 발송했습니다. 이메일을 확인해주세요.');
@@ -155,10 +158,10 @@
 			).catch(
 				function(code){
 					if(code == 1000){
-						$('#emailMsg').text('이메일 형식이 올바르지 않습니다.').addClass('dont').removeClass('ok');
+						$('#memberEmailMsg').text('이메일 형식이 올바르지 않습니다.').addClass('dont').removeClass('ok');
 						$('#authCode').prop('readonly', true);
 					} else if(code == 2000){
-						$('#emailMsg').text('이미 사용 중인 이메일입니다.').addClass('dont').removeClass('ok');
+						$('#memberEmailMsg').text('이미 사용 중인 이메일입니다.').addClass('dont').removeClass('ok');
 						$('#authCode').prop('readonly', true);
 					}
 				}
@@ -169,12 +172,12 @@
 	// 비밀번호 재확인
 	let rePwPass = false;
 	function fnPwConfirm(){
-		$('#pwConfirm').on('keyup', function(){
-			if($('#pwConfirm').val() != '' && $('#pw').val() != $('#pwConfirm').val()){
-				$('#pwConfirmMsg').text('비밀번호를 확인해주세요.').addClass('dont').removeClass('ok');
+		$('#memberPwConfirm').on('keyup', function(){
+			if($('#memberPwConfirm').val() != '' && $('#memberPw').val() != $('#memberPwConfirm').val()){
+				$('#memberPwConfirmMsg').text('비밀번호를 확인해주세요.').addClass('dont').removeClass('ok');
 				rePwPass = false;
 			} else {
-				$('#pwConfirmMsg').text('');
+				$('#memberPwConfirmMsg').text('');
 				rePwPass = true;
 			}
 		})
@@ -184,13 +187,13 @@
 	// 비밀번호 정규식
 	let pwPass = false;
 	function fnPwCheck(){
-		$('#pw').on('keyup', function(){
+		$('#memberPw').on('keyup', function(){
 			let regPw = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,12}$/; 
-			if(regPw.test($('#pw').val())==false){
-				$('#pwMsg').text('영문 소문자, 숫자, 특수문자 포함 8~12자로 입력해주세요.').addClass('dont').removeClass('ok');
+			if(regPw.test($('#memberPw').val())==false){
+				$('#memberPwMsg').text('영문 소문자, 숫자, 특수문자 포함 8~12자로 입력해주세요.').addClass('dont').removeClass('ok');
 				pwPass = false;
 			} else {
-				$('#pwMsg').text('사용 가능한 비밀번호입니다.').addClass('ok').removeClass('dont');
+				$('#memberPwMsg').text('사용 가능한 비밀번호입니다.').addClass('ok').removeClass('dont');
 				pwPass = true;
 			}
 		})
@@ -200,11 +203,11 @@
 	// 아이디(중복&정규식)
 	let idPass = false;
 	function fnIdCheck(){
-		$('#id').on('keyup', function(){
+		$('#memberId').on('keyup', function(){
 			// 정규식 
-			let regId = /^[A-Za-z0-9]{6,12}$/; 
-			if(regId.test($('#id').val())==false){
-				$('#idMsg').text('아이디는 영어 소문자,숫자 포함 6~12자리로 입력해주세요.').addClass('dont').removeClass('ok');
+			let regId = /^(?=.*[0-9]+)[a-zA-Z][a-zA-Z0-9]{5,12}$/; 
+			if(regId.test($('#memberId').val())==false){
+				$('#memberIdMsg').text('아이디는 영문 대소문자,숫자 포함 6~12자리로 입력해주세요.').addClass('dont').removeClass('ok');
 				idPass = false;
 				return;
 			}
@@ -212,19 +215,19 @@
 			$.ajax({
 				url: '${contextPath}/member/idCheck',
 				type: 'get',
-				data: 'id=' + $('#id').val(),
+				data: 'memberId=' + $('#memberId').val(),
 				dataType: 'json',
 				success: function(obj){
 					if(obj.res == null){
-						$('#idMsg').text('사용가능한 아이디입니다.').addClass('ok').removeClass('dont');
+						$('#memberIdMsg').text('사용가능한 아이디입니다.').addClass('ok').removeClass('dont');
 						idPass = true;
 					} else {
-						$('#idMsg').text('이미 사용중이거나 탈퇴한 아이디입니다.').addClass('dont').removeClass('ok');
+						$('#memberIdMsg').text('이미 사용중이거나 탈퇴한 아이디입니다.').addClass('dont').removeClass('ok');
 						idPass = false;
 					}
 				},
 				error: function(jqXHR){
-					$('#idMsg').text(jqXHR.responseText).addClass('dont').removeClass('ok');
+					$('#memberIdMsg').text(jqXHR.responseText).addClass('dont').removeClass('ok');
 					idPass = false;
 				}
 			})
@@ -236,51 +239,51 @@
 	
 	<h3>회원가입</h3>
 	
-	<form id="form" action="${contextPath}/member/signIn" method="post">
+	<form id="SignInform" action="${contextPath}/member/signIn" method="post">
 	
 		<input type="hidden" name="info" value="${agreements[0]}">
 		<input type="hidden" name="event" value="${agreements[1]}">
 		
-		<label for="id">
+		<label for="memberId">
 			아이디<br>
-			<input type="text" name="id" id="id"><br>
-			<span id="idMsg"></span>
+			<input type="text" name="memberId" id="memberId"><br>
+			<span id="memberIdMsg"></span>
 		</label><br><br>
 		
-		<label for="pw">
+		<label for="memberPw">
 			비밀번호<br>
-			<input type="password" name="pw" id="pw"><br>
-			<span id="pwMsg"></span>
+			<input type="password" name="memberPw" id="memberPw"><br>
+			<span id="memberPwMsg"></span>
 		</label><br><br>
 
-		<label for="pwConfirm">
+		<label for="memberPwConfirm">
 			비밀번호 재확인<br>
-			<input type="password" id="pwConfirm"><br>
-			<span id="pwConfirmMsg"></span>
+			<input type="password" id="memberPwConfirm"><br>
+			<span id="memberPwConfirmMsg"></span>
 		</label><br><br>
 		
-		<label for="name">
+		<label for="memberName">
 			이름<br>
-			<input type="text" name="name" id="name"><br>
+			<input type="text" name="memberName" id="memberName"><br>
 		</label><br><br>
 		
-		<label for="phone">
+		<label for="memberPhone">
 			연락처<br>
-			<input type="text" name="phone" id="phone"><br>
-			<span id="phoneMsg"></span>
+			<input type="text" name="memberPhone" id="memberPhone"><br>
+			<span id="memberPhoneMsg"></span>
 		</label><br><br>
 		
-		<label for="birth">
+		<label for="memberBirth">
 			생년월일<br>
-			<input type="text" name="birth" id="birth"><br>
-			<span id="birthMsg"></span>
+			<input type="text" name="memberBirth" id="memberBirth"><br>
+			<span id="memberBirthMsg"></span>
 		</label><br><br>
 		
-		<label for="email">
+		<label for="memberEmail">
 			이메일<br>
-			<input type="text" name="email" id="email">
+			<input type="text" name="memberEmail" id="memberEmail">
 			<input type="button" value="인증번호받기" id="btnGetAuthCode"><br>
-			<span id="emailMsg"></span><br>
+			<span id="memberEmailMsg"></span><br>
 			<input type="text" name="authCode" id="authCode" placeholder="인증코드 입력">
 			<input type="button" value="인증하기" id="btnVerifyAuthCode"><br><br>
 		</label>
@@ -289,6 +292,7 @@
 		<button>회원가입</button>
 		<input type="button" value="취소하기" onclick="location.href='${contextPath}'"> 
 	</form>
+<<<<<<< HEAD
 =======
 </head>
 <body>
@@ -296,6 +300,8 @@
 	<jsp:include page="../layout/header.jsp"></jsp:include>
 <H1>회원가입</H1>
 >>>>>>> c59662fb02f93b207bba363601958b80bf9b2233
+=======
+>>>>>>> jieun
 
 </body>
 </html>

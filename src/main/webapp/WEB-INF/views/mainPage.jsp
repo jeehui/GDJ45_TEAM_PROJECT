@@ -206,13 +206,30 @@
   
 </script>
 <body>
+
+	<!-- 로그인 이전 -->
+	<c:if test="${loginMember eq null}">
+		<a href ="${contextPath}/member/loginPage">로그인</a>
+		<a href ="${contextPath}/member/agreePage">회원가입</a>			
+	</c:if>
+
+	<!-- 로그인 이후 -->
+	<c:if test="${loginMember ne null}">
+		${loginMember.memberId}
+		<a href ="${contextPath}/member/logout">로그아웃</a>
+		<a href ="${contextPath}/member/memberPage">마이페이지</a>		
 	
+<<<<<<< HEAD
 	<jsp:include page="layout/header.jsp"></jsp:include>
+=======
+	</c:if>
+>>>>>>> jieun
 	
 	<div class="background">
 		<img src="resources/images/hotel.jpg" alt="main" width="100%" height="850px">
 	</div>
 	
+<<<<<<< HEAD
 <<<<<<< HEAD
 	<!-- 로그인 이전 -->
 	<a href ="${contextPath}/member/loginPage">로그인</a>
@@ -255,6 +272,12 @@
 =======
 >>>>>>> 4fec35ead6f3bc375ad1f5b562062cc028895520
 	<a href="${contextPath}/reservation/reservationPage">예약 페이지</a>
+=======
+	<!-- 테스트 -->
+	<a href="${contextPath}/board/reviewPage">리뷰작성</a>
+	<a href="${contextPath}/reservation/reservationPage">예약</a>
+
+>>>>>>> jieun
 </body>
 </section>
 <footer>
