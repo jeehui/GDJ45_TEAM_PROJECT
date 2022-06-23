@@ -239,10 +239,7 @@
 	</div>
 
 	
-<<<<<<< HEAD
 	<a href="${contextPath}/reservation/reservationPage">예약 페이지</a>
-=======
->>>>>>> 010c9273248c98ff3072eb90e5994d58066240ad
 </body>
 </section>
 <footer>
