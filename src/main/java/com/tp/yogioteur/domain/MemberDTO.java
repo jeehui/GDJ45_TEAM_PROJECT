@@ -2,8 +2,6 @@ package com.tp.yogioteur.domain;
 
 import java.sql.Date;
 
-<<<<<<< HEAD
-=======
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,7 +11,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
->>>>>>> 939e2eb59e5813b5da77712c625b61066ff4b744
 public class MemberDTO {
 	
 	private Long memberNo;
