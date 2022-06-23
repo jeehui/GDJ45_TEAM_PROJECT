@@ -47,8 +47,8 @@ public class ReviewController {
 	
 
 	  
-	/*  @GetMapping("/review/removeReview") public void
-	  removeReview(HttpServletRequest request, HttpServletResponse response) {
-	  reviewService.removeReview(request, response); }
-	*/ 
+	@GetMapping("/review/reviewRemove") public void removeReview(HttpServletRequest request, HttpServletResponse response) {
+		reviewService.removeReview(request, response); 
+	 }
+	 
 }

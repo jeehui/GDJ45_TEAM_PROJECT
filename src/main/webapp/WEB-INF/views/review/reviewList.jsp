@@ -19,7 +19,7 @@
    
 	 function fnRemove(rn){      
 	       if(confirm('삭제할까요?')){
-	          location.href='${contextPath}/review/remove?reviewNo=' + $(rn).data('review_no');
+	          location.href='${contextPath}/review/reviewRemove?reviewNo=' + $(rn).data('review_no');
 	       }
 	 }
 	 
