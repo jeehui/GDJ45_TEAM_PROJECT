@@ -9,19 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<<<<<<< HEAD
-<script>
-</script>
-</head>
-<body>
-	
-	
-	<h1>MAIN PAGE</h1>
-	
-	<a href="${contextPath}/faq/faqList">faq</a>
-	
-</body>
-=======
+
 <link href="https://fonts.googleapis.com/css2?family=Charis+SIL:wght@700&family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 <script src="https://kit.fontawesome.com/148c1051b1.js" crossorigin="anonymous"></script>
@@ -236,7 +224,6 @@
 			날씨별관광지 추천
 			
 		</div>
-<<<<<<< HEAD
 	</div>
 
 	<a href="${contextPath}/reservation/reservationPage">예약 페이지</a>
@@ -244,15 +231,12 @@
 	<a href="${contextPath}/board/reviewPage">리뷰작성</a>
 	<a href="${contextPath}/reservation/reservationPage">예약</a>
 
-=======
 		
 	<jsp:include page="layout/footer.jsp"></jsp:include>
 	
->>>>>>> jee
 </body>
 </section>
 
-<<<<<<< HEAD
 	<div class="end_info">
 	
 		<div class="hotel_info"> 
@@ -272,7 +256,4 @@
 	</div>
 
 </footer>
->>>>>>> 939e2eb59e5813b5da77712c625b61066ff4b744
-=======
->>>>>>> 1617dbf7201103314e446b3f689dbb8249c0e013
 </html>
