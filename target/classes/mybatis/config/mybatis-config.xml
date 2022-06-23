@@ -20,12 +20,18 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	
 =======
 	<typeAliases>
+		<typeAlias type="com.tp.yogioteur.domain.MemberDTO" alias="MemberDTO" />
+		<typeAlias type="com.tp.yogioteur.domain.SignOutMemberDTO" alias="SignOutMemberDTO" />
 		<typeAlias type="com.tp.yogioteur.domain.ReservationDTO" alias="ReservationDTO" />
+		<typeAlias type="com.tp.yogioteur.domain.DTO" alias="DTO" />
 	</typeAliases>
 	
+<<<<<<< HEAD
 	<!-- <typeAliases>
 		<typeAlias type="com.tp.yogioteur.domain.DTO" alias="DTO" />
 	</typeAliases> -->
 	
 >>>>>>> 939e2eb59e5813b5da77712c625b61066ff4b744
+=======
+>>>>>>> a78cd674548878283bccbc5f14e6a311e8b9c410
 </configuration>

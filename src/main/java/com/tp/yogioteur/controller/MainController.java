@@ -31,6 +31,7 @@ public class MainController {
 	}
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	
 =======
@@ -46,8 +47,14 @@ public class MainController {
 		roomService.reservationRoom(request, model);
 		return "room/roomList";
 	}
+=======
+	 @PostMapping("/room/roomList") public String list(HttpServletRequest request,
+	  Model model) { roomService.reservationRoom(request, model); 
+	   return "room/roomList"; 
+	  }
+	 
+>>>>>>> a78cd674548878283bccbc5f14e6a311e8b9c410
 	
->>>>>>> jee
 	@GetMapping("/member/loginPage")
 	public String loginPage() {
 		return "member/login";
@@ -65,4 +72,6 @@ public class MainController {
 	}
 >>>>>>> 939e2eb59e5813b5da77712c625b61066ff4b744
 	
+=======
+>>>>>>> jieun
 }

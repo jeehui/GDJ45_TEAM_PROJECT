@@ -10,8 +10,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
+<<<<<<< HEAD
 @NoArgsConstructor
 @AllArgsConstructor
+=======
+@AllArgsConstructor
+@NoArgsConstructor
+>>>>>>> jieun
 @Builder
 >>>>>>> 939e2eb59e5813b5da77712c625b61066ff4b744
 public class SignOutMemberDTO {
@@ -21,8 +26,8 @@ public class SignOutMemberDTO {
 	private String id;
 	private String name;
 	private String email;
-	private Date signOut;
 	private Integer agreeState;
 	private Date signIn;
+	private Date signOut;
 
 }
