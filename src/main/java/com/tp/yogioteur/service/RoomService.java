@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 public interface RoomService {
 	
+	//체크인체크아웃 전송
 	public void roomList(HttpServletRequest request, Model model);
 	
 	
