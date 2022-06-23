@@ -22,6 +22,7 @@ public class MainController {
 		return "mainPage";
 	}
 	
+<<<<<<< HEAD
 	 @PostMapping("/room/roomList") public String list(HttpServletRequest request,
 	  Model model) { roomService.reservationRoom(request, model); 
 	   return "room/roomList"; 
@@ -44,4 +45,6 @@ public class MainController {
 		
 	}
 	
+=======
+>>>>>>> jieun
 }
