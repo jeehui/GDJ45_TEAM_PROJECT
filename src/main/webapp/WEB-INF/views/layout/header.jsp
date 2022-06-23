@@ -15,6 +15,11 @@
 		font-family: 'Kdam Thmor Pro', sans-serif;
 	}
 	
+	a{
+		text-decoration: none;
+		color: white;
+	}
+	
 	.head{
 		display: flex;
 		justify-content: space-between;

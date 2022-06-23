@@ -46,4 +46,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		    ON R.RT_NO = T.RT_NO
 		 ORDER BY R.ROOM_NO DESC
 	</select>
+	
+	<select id="checkInRoomList" resultType="RoomDTO">
+		SELECT ROOM_NO, RT_NO, ROOM_NAME, ROOM_STATUS, ROOM_CHECK_IN, ROOM_CHECK_OUT, ROOM_PRICE
+		  FROM ROOM
+		 WHERE ROOM_CHECK_IN = #{roomCheckIn}
+	
+	</select>
+	
 </mapper>

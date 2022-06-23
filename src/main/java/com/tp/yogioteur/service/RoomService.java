@@ -10,10 +10,14 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 public interface RoomService {
 	
-	public void reservationRoom(HttpServletRequest request, Model model);
+	public void roomList(HttpServletRequest request, Model model);
 	
+	
+	
+	//관리자 등록, 조회
 	public void saveRoom(MultipartHttpServletRequest request, HttpServletResponse response);
-
 	public Map<String, Object> findRooms();
+	
+	
 	
 }

@@ -48,10 +48,10 @@ public class MainController {
 		
 	}
 	
-	//form매핑 객실 조회로 보냄.
+		//form매핑 객실 조회로 보냄.
 		@PostMapping("/room/roomList")
 		public String list(HttpServletRequest request, Model model) {
-			roomService.reservationRoom(request, model);
+			roomService.roomList(request, model);
 			return "room/roomList";
 		}
 		

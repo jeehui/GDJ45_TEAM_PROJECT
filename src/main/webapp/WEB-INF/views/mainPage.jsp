@@ -34,49 +34,11 @@
 	
 	}
 	
-	.head{
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		background-color: silver;
-		padding: 8px 12px;
-	}
-	
-	.header a{
-		padding: 12px;
-		display: inline-block;
-		font-size: 18px;
-	}
-	
-	.header a:hover {
-		
-		color: #999;
-		
-	}
-	
-		
-	.title a{
-		font-size: 22px;
-	}
-	
-	.header2 a{
-		padding: 12px;
-		display: inline-block;
-		font-size: 18px;
-	}
-	
-	.header2 a:hover {
-		
-		color: #999;
-		
-	}
-	
 	.background{
 		
 		height: 850px;
 	
 	}
-	
 	.searchBar{
 		display: flex;
 		align-items: center;

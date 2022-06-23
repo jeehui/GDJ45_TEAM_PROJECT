@@ -31,8 +31,12 @@ public class RoomServiceImpl implements RoomService {
 	@Autowired
 	private RoomMapper roomMapper;
 	
+	
+	//날짜 조회 후 객실 조회
 	@Override
-	public void reservationRoom(HttpServletRequest request, Model model) {
+	public void roomList(HttpServletRequest request, Model model) {
+		
+		
 		
 	}
 	@Override

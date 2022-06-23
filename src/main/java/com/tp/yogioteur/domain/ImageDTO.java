@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 public class ImageDTO {
 	
 	private Long imageNo;
-	private Integer roomNo;
+	private Long roomNo;
 	private String imagePath;
 	private String imageSaved;
 	private String imageOrigin;

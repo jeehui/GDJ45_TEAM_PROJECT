@@ -15,4 +15,8 @@ public interface RoomMapper {
 	
 	public List<RoomDTO> selectRoomList();
 	
+	
+	//checkin 방조회	
+	
+	
 }

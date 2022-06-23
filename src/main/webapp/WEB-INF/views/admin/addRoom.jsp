@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="../resources/css/admin.css">
 </head>
 <body>
-	
+		<jsp:include page="../layout/header.jsp"></jsp:include>
 	<div class="container">
 		<jsp:include page="index.jsp"></jsp:include>
 		
@@ -37,6 +37,6 @@
 			</form>
 		</div>
 	</div>
-
+		<jsp:include page="../layout/footer.jsp"></jsp:include>
 </body>
 </html>
