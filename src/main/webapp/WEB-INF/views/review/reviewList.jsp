@@ -12,17 +12,27 @@
 <script src="../resources/js/jquery-3.6.0.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script>
+
+	$(function(){
+		
+	})
    
-  	
-	
 	 function fnRemove(rn){      
 	       if(confirm('삭제할까요?')){
 	          location.href='${contextPath}/review/remove?reviewNo=' + $(rn).data('review_no');
 	       }
 	 }
+	 
+	 function fnReviewReply(rr){
+		 location.href='${contextPath}/review/reviewReply?reviewNo=' + $(rr).data('review_no');
+	 }
 
 </script>
-
+<style>
+	.reviewbox {
+		background-color : #f0f0f0;
+	}
+</style>
 </head>
 <body>
 
@@ -37,31 +47,33 @@
    <c:forEach items="${reviews}" var="review">
    		<div>
    			<div class="memberReview">
-   				<div> 
-   					회원 아이디 : 
-   					사진
-   					별점 : 
+   				<div class="reviewbox"> 
+   					회원 아이디 : ${review.memberNo} <br>
+   					별점 : ${review.reviewRevNo}<br>
+   					리뷰제목 : ${review.reviewTitle}<br>
+   					리뷰 내용 : ${review.reviewContent}<br>
+   					
+   					<hr>
+	
+					
+						<div><img src="${contextPath}/review/display?reviewNo=${review.reviewNo}" width="300px" onerror="this.style.display='none'"></div>				
+					
+					
+					
+		   			<input type="button" value="삭제" name="reviewRemoveBtn" data-review_no="${review.reviewNo}" onclick="fnReviewRemove(this)">
+		   			<input type="button" value="댓글달기" name="reviewReplyBtn" data-review_no="${review.reviewNo}" onclick="fnReviewReply(this)">
    				</div>
-   				
-   				<div>
-   				 	
-   				</div>
-   				
    			</div>
-   			<c:if test="${review.content} != null ">
-	   			<div class="adminReviewReply">
-   					<div>
-   						관리자 댓글 : 
-   					</div>
-   				</div>
+   			<c:if test="">
+	   			<div class="adminReply">
+	   				  			
+	   			
+	   			</div>
    			</c:if>
-   			
-   			<input type="button" value="삭제" name="reviewRemoveBtn" data-review_no="${review.reviewNo}" onclick="fnReviewRemove(this)">
-   			
    		</div>
    </c:forEach>
    
-   
+   <div class="noList">${paging}</div>
    
    
    

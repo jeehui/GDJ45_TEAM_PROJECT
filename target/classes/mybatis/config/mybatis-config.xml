@@ -14,6 +14,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="com.tp.yogioteur.domain.ReservationDTO" alias="ReservationDTO" />
 		<typeAlias type="com.tp.yogioteur.domain.ReviewDTO" alias="ReviewDTO" />		
 		<typeAlias type="com.tp.yogioteur.domain.ReImageDTO" alias="ReImageDTO" />		
+		<typeAlias type="com.tp.yogioteur.domain.ReviewReplyDTO" alias="ReviewReplyDTO" />		
 	</typeAliases>
 	
 </configuration>

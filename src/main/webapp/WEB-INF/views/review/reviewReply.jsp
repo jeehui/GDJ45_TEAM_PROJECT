@@ -42,8 +42,6 @@
 			}
 		})
 	}
-		
-	
 
 </script>
 <style type="text/css">
@@ -53,7 +51,7 @@
     border: 0; /* 필드셋 테두리 제거 */
 	}
 	#reviewAdd input[type=radio]{
-	    /*display: none;*/ /* 라디오박스 감춤 */
+	    display: none; /* 라디오박스 감춤 */
 	}
 	#reviewAdd label{
     font-size: 3em; /* 이모지 크기 */
@@ -80,20 +78,20 @@
    
   <h1>새 리뷰 작성</h1>
    
-   <form id="reviewAdd" action="${contextPath}/review/reviewSave" method="post" enctype="multipart/form-data">
+   <form id="reviewAdd" action="${contextPath}/review/save" method="post" enctype="multipart/form-data">
    		아이디 : ${member.memberId}
+  		별점
   		
         
   		<input type="text" name="reviewTitle" placeholder="리뷰 제목"><br>
-  		<textarea rows="10" cols="50" class="review_textarea" name="reviewContent" placeholder="리뷰 내용"></textarea><br>
+  		<textarea rows="10" cols="50" class="review_textarea" placeholder="리뷰 내용"></textarea><br>
    		
-  		별점 :
    		<fieldset>
-	        <input type="radio" name="reviewRevNo" value="1" id="rate1"><label for="rate1">★</label>
-	        <input type="radio" name="reviewRevNo" value="2" id="rate2"><label for="rate2">★</label>
-	        <input type="radio" name="reviewRevNo" value="3" id="rate3"><label for="rate3">★</label>
-	        <input type="radio" name="reviewRevNo" value="4" id="rate4"><label for="rate4">★</label>
-	        <input type="radio" name="reviewRevNo" value="5" id="rate5"><label for="rate5">★</label>
+	        <input type="radio" name="rating" value="1" id="rate1"><label for="rate1">★</label>
+	        <input type="radio" name="rating" value="2" id="rate2"><label for="rate2">★</label>
+	        <input type="radio" name="rating" value="3" id="rate3"><label for="rate3">★</label>
+	        <input type="radio" name="rating" value="4" id="rate4"><label for="rate4">★</label>
+	        <input type="radio" name="rating" value="5" id="rate5"><label for="rate5">★</label>
     	</fieldset>
    		
    		<input type="file" name="files" id="files"/>
