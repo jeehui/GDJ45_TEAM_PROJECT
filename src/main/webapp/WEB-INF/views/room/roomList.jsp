@@ -13,6 +13,7 @@
 </script>
 </head>
 <body>
-	방 소개
+
+
 </body>
 </html>

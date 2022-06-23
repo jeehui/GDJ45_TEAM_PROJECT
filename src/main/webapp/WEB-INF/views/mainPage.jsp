@@ -12,7 +12,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Charis+SIL:wght@700&family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 <script src="https://kit.fontawesome.com/148c1051b1.js" crossorigin="anonymous"></script>
-<script src="../resources/js/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
@@ -168,17 +167,19 @@
 	
 	//페이지 로드 이벤트
 	
-	$(document).ready(function(){
+	$(function(){
 		
 		
 		 $("#checkIn").datepicker({
-			 dateFormat: 'yymmdd'
+			 dateFormat: 'yy/mm/dd'
 		    });
 		    
 		 $("#checkOut").datepicker({
-			 dateFormat: 'yymmdd'
+			 dateFormat: 'yy/mm/dd'
 		    });
-		
+		 
+		 fnDate();
+		 
 		//폼의 서브밋 이벤트
 		$('#f').on('submit', (ev)=>{
 			
@@ -195,29 +196,18 @@
 	
   //함수
   
+   function fnDate(){
+		
+		 $('#checkIn').datepicker('option', 'minDate','0');//오늘이후 선택가능
+		  $('#checkOut').datepicker('option', 'minDate','0');//오늘이후 선택가능
+		
+	} 
+  
   
 </script>
 <body>
-	<div class="head">
-	<jsp:include page="./layout/header.jsp"></jsp:include>
 	
-		<div class="header">
-				<a href="${contextPath}/review/reviewPage">REVIEW</a>
-				<a href="${contextPath}/faq/faqPage">FAQ</a>
-		</div>
-		
-		<div class="title">
-			<a href="${contextPath}/mainPage">YOGIOTEUR</a>
-		</div>
-		 
-		<div class="header2">
-				<a href="${contextPath}/login/loginPage" >로그인</a>
-				<a href="${contextPath}/signUp/signUpPage" >회원가입</a>
-		</div>
-		
-		
-		
-	</div>
+	<jsp:include page="layout/header.jsp"></jsp:include>
 	
 	<div class="background">
 		<img src="resources/images/hotel.jpg" alt="main" width="100%" height="850px">
@@ -260,12 +250,13 @@
 
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> c59662fb02f93b207bba363601958b80bf9b2233
-	<a href="${contextPath}/reservation/reservationPage">예약 페이지</a>
 =======
->>>>>>> 010c9273248c98ff3072eb90e5994d58066240ad
+>>>>>>> 4fec35ead6f3bc375ad1f5b562062cc028895520
+	<a href="${contextPath}/reservation/reservationPage">예약 페이지</a>
 </body>
-
+</section>
 <footer>
 
 	<div class="end_info">
@@ -283,7 +274,7 @@
 				<li><i class="fa-brands fa-instagram"></i></li>
 			</ul>
 				
-		
+			<a href="${contextPath}/reservation/reservationPage">예약</a>
 	</div>
 
 </footer>
