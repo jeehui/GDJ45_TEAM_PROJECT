@@ -14,5 +14,12 @@ awefaw
 home test
 success!
 one more
+<<<<<<< HEAD
 >>>>>>> 010c9273248c98ff3072eb90e5994d58066240ad
+<<<<<<< HEAD
 >>>>>>> 939e2eb59e5813b5da77712c625b61066ff4b744
+=======
+=======
+>>>>>>> db4877f19f2f7dd3c0f3035a5735a68af3cfb035
+>>>>>>> jieun
+>>>>>>> a78cd674548878283bccbc5f14e6a311e8b9c410

@@ -9,8 +9,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<<<<<<< HEAD
 <script>
 </script>
+=======
+
+>>>>>>> main
 <link href="https://fonts.googleapis.com/css2?family=Charis+SIL:wght@700&family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 <script src="https://kit.fontawesome.com/148c1051b1.js" crossorigin="anonymous"></script>
@@ -28,64 +32,28 @@
 		color: white;
 	}
 	
-	.head{
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		background-color: silver;
-		padding: 8px 12px;
-	}
-	
-	.header a{
-		padding: 12px;
-		display: inline-block;
-		font-size: 18px;
-	}
-	
-	.header a:hover {
+	form{
 		
-		color: #999;
+		background: silver;
 		
+	
 	}
 	
+	.background{
 		
-	.title a{
-		font-size: 22px;
-	}
+		height: 850px;
 	
-	.header2 a{
-		padding: 12px;
-		display: inline-block;
-		font-size: 18px;
 	}
-	
-	.header2 a:hover {
-		
-		color: #999;
-		
-	}
-	
 	.searchBar{
-		width: 70%;
-		height: 70px;
-		display: block;
-		align-items: center;
-		background-color: silver;
-		padding-left: 130px;
-	    padding-right: 105px;
-	    margin-left: 143px;
-		
-	}
-	
-	
-	 .searchBar{
 		display: flex;
 		align-items: center;
+		background-color: silver;
+	    height: 80px;
 		font-size: 25px;
+		padding-left: 300px;
 		color: white;
-		padding-left: 160px;
 		
-	} 
+	}
 	
 	button {
 	  margin: 5px;
@@ -160,7 +128,13 @@
 	  top: 2px;;
 	}
 	
-	
+	.weather_api{
+		
+		display: block;
+		width: 1300px;
+		height: 500px;
+		
+	}
 	
 </style>
 </head>
@@ -199,16 +173,30 @@
   
    function fnDate(){
 		
-		 $('#checkIn').datepicker('option', 'minDate','0');//오늘이후 선택가능
-		  $('#checkOut').datepicker('option', 'minDate','0');//오늘이후 선택가능
+		 $('#checkIn').datepicker('option', 'minDate','0');//오늘부터 선택가능
+		 $('#checkOut').datepicker('option', 'minDate','+1');//다음날부터 선택가능 특정날짜 키워드로 찾아보기
 		
 	} 
   
   
 </script>
 <body>
-	
+
 	<jsp:include page="layout/header.jsp"></jsp:include>
+	
+	<!-- 로그인 이전 -->
+	<c:if test="${loginMember eq null}">
+		<a href ="${contextPath}/member/loginPage">로그인</a>
+		<a href ="${contextPath}/member/agreePage">회원가입</a>			
+	</c:if>
+
+	<!-- 로그인 이후 -->
+	<c:if test="${loginMember ne null}">
+		${loginMember.memberId}
+		<a href ="${contextPath}/member/logout">로그아웃</a>
+		<a href ="${contextPath}/member/memberPage">마이페이지</a>		
+	
+	</c:if>
 	
 	<div class="background">
 		<img src="resources/images/hotel.jpg" alt="main" width="100%" height="850px">
@@ -233,19 +221,32 @@
 		
 		</form>
 		
+	</div>
+	
 		<div class="weather_api">
 		
+			날씨별관광지 추천
 			
 		</div>
 	</div>
 
+<<<<<<< HEAD
 	
 
 	<a href="${contextPath}/reservation/reservationPage">예약 페이지</a>
 
+=======
+	<a href="${contextPath}/reservation/reservationPage">예약 페이지</a>
+	<!-- 테스트 -->
+	<a href="${contextPath}/board/reviewPage">리뷰작성</a>
+	<a href="${contextPath}/reservation/reservationPage">예약</a>
+
+		
+	<jsp:include page="layout/footer.jsp"></jsp:include>
+	
+>>>>>>> main
 </body>
 </section>
-<footer>
 
 	<div class="end_info">
 	
@@ -266,5 +267,8 @@
 	</div>
 
 </footer>
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 </html>
