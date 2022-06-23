@@ -17,11 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import com.tp.yogioteur.domain.MemberDTO;
-import com.tp.yogioteur.domain.SignOutMemberDTO;
 import com.tp.yogioteur.mapper.MemberMapper;
 import com.tp.yogioteur.util.SecurityUtils;
 
@@ -222,6 +219,42 @@ public class MemberServiceImpl implements MemberService {
 		}
 		
 	}
+	
+	// 회원정보 수정
+	@Override
+	public void changeMember(HttpServletRequest request, HttpServletResponse response) {
+		
+		String memberPhone = request.getParameter("memberPhone");
+		String memberEmail = request.getParameter("memberEmail");
+		
+		MemberDTO member = MemberDTO.builder()
+				.memberPhone(memberPhone)
+				.memberEmail(memberEmail)
+				.build();
+		
+		int res = memberMapper.updateMember(member);
+		try {
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			if(res > 0) {
+				out.println("<script>");
+				out.println("alert('정상적으로 수정되었습니다.')");
+				out.println("location.href='"+ request.getContextPath() + "/member/memberPage'");		
+				out.println("</script>");
+				out.close();
+			} else {
+				out.println("<script>");
+				out.println("alert('수정에 실패했습니다.')");
+				out.println("history.back()");		
+				out.println("</script>");
+				out.close();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
 	
 //	@Override
 //	public SignOutMemberDTO findSignOutMember(String memberId) {

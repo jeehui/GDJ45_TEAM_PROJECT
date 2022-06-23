@@ -127,4 +127,22 @@ public class MemberController {
 	public String reservationPage() {
 		return "board/review";
 	}
+	
+	
+	// 회원 수정
+	@GetMapping("/member/memberPage")
+	public String memberPage(){
+		return "member/memberInfo";
+	}
+	
+	@PostMapping("/member/modifyMember")
+	public void modifyMember(HttpServletRequest request, HttpServletResponse response){
+		memberService.changeMember(request, response);
+	}
+	
+	// 회원 탈퇴
+//	@GetMapping("/member/signOut")
+//	public void signOut(HttpServletRequest request, HttpServletResponse response) {
+//		memberService.signOut(request, response);
+//	}
 }

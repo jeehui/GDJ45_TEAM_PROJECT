@@ -41,13 +41,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	 	(MEMBER_LOG_SEQ.NEXTVAL, #{memberId}, TO_DATE(SYSDATE, 'yyyy-mm-dd hh24:mi:ss'))
 	</insert>
 	
-	<!-- 탈퇴 -->
-<!-- 	<select id="selectSignOutMemberByMemberId" parameterType="String" resultType="SignOutMemberDTO">
-	SELECT SIGN_OUT_NO, MEMBER_NO, ID, NAME, EMAIL, AGREE_STATE, SIGN_IN, SIGN_OUT
-		FROM SIGN_OUT_MEMBER
-	 WHERE ID = #{memberId}
-	</select>
-	-->
+
 	
 	<!-- 아이디찾기 -->
 	<select id="findMemberByNameEmail" parameterType="MemberDTO" resultType="MemberDTO">
@@ -68,9 +62,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 비번 수정 -->
 	<update id="updatePw" parameterType="MemberDTO">
-		UPDATE MEMBER
-		   SET MEMBER_PW = #{memberPw}
-		 WHERE MEMBER_ID = #{memberId}
+	UPDATE MEMBER
+	   SET MEMBER_PW = #{memberPw}
+	 WHERE MEMBER_ID = #{memberId}
 	</update>
+	
+	<!-- 회원정보 수정 -->
+	<update id="updateMember" parameterType="MemberDTO">
+	UPDATE MEMBER
+	   SET MEMBER_PHONE = #{memberPhone}
+	    MEMBER_EMAIL = #{memberEmail}
+	 WHERE MEMBER_NO = #{memberNo}
+	</update>
+	
+	
+		<!-- 탈퇴 -->
+<!-- 	<select id="selectSignOutMemberByMemberId" parameterType="String" resultType="SignOutMemberDTO">
+	SELECT SIGN_OUT_NO, MEMBER_NO, ID, NAME, EMAIL, AGREE_STATE, SIGN_IN, SIGN_OUT
+		FROM SIGN_OUT_MEMBER
+	 WHERE ID = #{memberId}
+	</select>
+	-->
 	
 </mapper>

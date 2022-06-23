@@ -28,6 +28,9 @@ public interface MemberService {
 	public Map<String, Object> idEmailCheck(MemberDTO member);
 	public void changePw(HttpServletRequest request, HttpServletResponse response);
 	
+	// 회원정보 수정
+	public void changeMember(HttpServletRequest request, HttpServletResponse response);
+	
 	// 탈퇴
 //	public SignOutMemberDTO findSignOutMember(String memberId);
 }
