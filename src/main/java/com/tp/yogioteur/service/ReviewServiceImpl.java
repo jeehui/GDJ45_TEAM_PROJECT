@@ -1,9 +1,5 @@
 package com.tp.yogioteur.service;
-<<<<<<< HEAD
-  
-=======
 
->>>>>>> main
 import java.io.File;
 import java.io.PrintWriter;
 import java.nio.file.Files;

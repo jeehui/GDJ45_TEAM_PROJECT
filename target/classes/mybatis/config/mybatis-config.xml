@@ -9,19 +9,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<setting name="mapUnderscoreToCamelCase" value="true"/>
 	</settings>
 	
-<<<<<<< HEAD
-	<typeAliases>
-		<typeAlias type="com.tp.yogioteur.domain.FaqDTO" alias="FaqDTO" />
-		<typeAlias type="com.tp.yogioteur.domain.ReservationDTO" alias="ReservationDTO" />
-		<typeAlias type="com.tp.yogioteur.domain.ReviewDTO" alias="ReviewDTO" />		
-		<typeAlias type="com.tp.yogioteur.domain.ReImageDTO" alias="ReImageDTO" />		
-		<typeAlias type="com.tp.yogioteur.domain.ReviewReplyDTO" alias="ReviewReplyDTO" />		
-	</typeAliases>
-=======
-<!-- 	<typeAliases>
-		<typeAlias type="com.tp.yogioteur.domain.DTO" alias="DTO" />
-	</typeAliases> -->
-	
 	<typeAliases>
 		<typeAlias type="com.tp.yogioteur.domain.FaqDTO" alias="FaqDTO" />
 		<typeAlias type="com.tp.yogioteur.domain.MemberDTO" alias="MemberDTO" />
@@ -32,9 +19,5 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="com.tp.yogioteur.domain.RoomTypeDTO" alias="RoomTypeDTO" />
 		<typeAlias type="com.tp.yogioteur.domain.ImageDTO" alias="ImageDTO" />
 	</typeAliases>
-	<!-- <typeAliases>
-		<typeAlias type="com.tp.yogioteur.domain.DTO" alias="DTO" />
-	</typeAliases> -->
->>>>>>> main
 	
 </configuration>

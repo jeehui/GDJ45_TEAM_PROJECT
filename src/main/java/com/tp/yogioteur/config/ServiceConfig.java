@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /*
  * package com.tp.yogioteur.config;
  * 
@@ -23,7 +23,7 @@
  * 
  * }
  */
-=======
+
 package com.tp.yogioteur.config;
 
 
@@ -48,4 +48,3 @@ public class ServiceConfig {
 	}
 	
 }
->>>>>>> main

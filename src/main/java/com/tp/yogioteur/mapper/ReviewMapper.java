@@ -36,8 +36,5 @@ public interface ReviewMapper {
 		public int deleteReview(Long reviewNo);
 	 
 	
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> main
