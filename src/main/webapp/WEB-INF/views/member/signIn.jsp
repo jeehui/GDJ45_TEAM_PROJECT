@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -298,10 +298,14 @@
 <body>
 
 	<jsp:include page="../layout/header.jsp"></jsp:include>
+<<<<<<< HEAD
 <H1>회원가입</H1>
 >>>>>>> c59662fb02f93b207bba363601958b80bf9b2233
 =======
 >>>>>>> jieun
+=======
+	<H1>회원가입</H1>
+>>>>>>> jee
 
 </body>
-</html>
+</html> --%>

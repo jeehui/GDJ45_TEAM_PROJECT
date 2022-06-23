@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<<<<<<< HEAD:src/main/webapp/WEB-INF/views/layout/header.jsp
 <style>
 	body{
 		margin: 0;
@@ -81,13 +82,3 @@
 	</div>
 
 <section>
-=======
-<script src="../resources/js/jquery-3.6.0.js"></script>
-</head>
-<body>
-
-	<h1>리뷰</h1>
-	
-</body>
-</html>
->>>>>>> jieun:src/main/webapp/WEB-INF/views/board/review.jsp

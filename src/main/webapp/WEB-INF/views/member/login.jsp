@@ -1,14 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> c59662fb02f93b207bba363601958b80bf9b2233
-=======
-
->>>>>>> jieun
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
@@ -19,15 +11,10 @@
 <title>Insert title here</title>
 <style>
 	.ok {
-<<<<<<< HEAD
-<<<<<<< HEAD
 		color: blue;
-=======
 		color: green;
->>>>>>> c59662fb02f93b207bba363601958b80bf9b2233
-=======
+		c59662fb02f93b207bba363601958b80bf9b2233
 		color: blue;
->>>>>>> jieun
 	}
 	.dont {
 		color: red;
@@ -107,13 +94,5 @@
 		<a href="${contextPath}/member/agreePage">회원가입</a> 
 	</div>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> c59662fb02f93b207bba363601958b80bf9b2233
-=======
-
->>>>>>> jieun
 </body>
-</html>
+</html> --%>

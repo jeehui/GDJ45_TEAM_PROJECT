@@ -17,7 +17,7 @@ public class RoomController {
 	
 	@PostMapping("/room/save")
 	public void save(MultipartHttpServletRequest multipartRequest, HttpServletResponse response) {
-		roomService.save(multipartRequest, response);
+		roomService.saveRoom(multipartRequest, response);
 	}
 	
 }
