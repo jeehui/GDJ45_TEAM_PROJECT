@@ -1,9 +1,5 @@
 package com.tp.yogioteur.mapper;
 
-<<<<<<< HEAD
-public interface RoomMapper {
-
-=======
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -22,6 +18,4 @@ public interface RoomMapper {
 	
 	//checkin 방조회	
 	
-	
->>>>>>> jee
 }

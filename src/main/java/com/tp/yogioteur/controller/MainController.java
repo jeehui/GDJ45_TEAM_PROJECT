@@ -26,20 +26,11 @@ public class MainController {
 	public String index() {
 		return "mainPage";
 	}
-	
-<<<<<<< HEAD
-<<<<<<< HEAD
-	 @PostMapping("/room/roomList") public String list(HttpServletRequest request,
-	  Model model) { roomService.reservationRoom(request, model); 
-	   return "room/roomList"; 
-	  }
 	 
-=======
 	@GetMapping("/admin/index")
 	public String adminPage() {
 		return "admin/index";
 	}
->>>>>>> jee
 	
 	@GetMapping("/member/loginPage")
 	public String loginPage() {
@@ -57,10 +48,6 @@ public class MainController {
 		
 	}
 	
-<<<<<<< HEAD
-=======
->>>>>>> jieun
-=======
 		//form 정보 전달
 		@PostMapping("/room/roomList")
 		public void list(HttpServletRequest request, Model model) {
@@ -78,5 +65,4 @@ public class MainController {
 			return roomService.findRooms();
 		}
 	
->>>>>>> jee
 }
