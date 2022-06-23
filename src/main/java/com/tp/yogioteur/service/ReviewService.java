@@ -25,5 +25,4 @@ public interface ReviewService {
 	// 리뷰 삭제
 	public void removeReview(HttpServletRequest request, HttpServletResponse response);
 	
-	
 }
